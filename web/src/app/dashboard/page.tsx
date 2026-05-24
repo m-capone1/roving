@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 const agents = [
   {
@@ -191,16 +192,25 @@ export default function DashboardPage() {
   return (
     <div className="p-6 space-y-6">
       {/* Greeting */}
-      <div>
-        <h2
-          className="text-[30px] font-bold text-[color:var(--color-on-surface)] tracking-tight"
-          style={{ fontFamily: "var(--font-display)" }}
+      <div className="flex items-start justify-between">
+        <div>
+          <h2
+            className="text-[30px] font-bold text-[color:var(--color-on-surface)] tracking-tight"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            {greeting()}, Maddy 👋
+          </h2>
+          <p className="text-sm text-[color:var(--color-secondary)] mt-1">
+            Here&apos;s what&apos;s happening in your agent wallets today.
+          </p>
+        </div>
+        <Link
+          href="/kya"
+          className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[color:var(--color-primary-container)] text-white text-sm font-semibold hover:opacity-90 transition-opacity shrink-0"
         >
-          {greeting()}, Maddy 👋
-        </h2>
-        <p className="text-sm text-[color:var(--color-secondary)] mt-1">
-          Here&apos;s what&apos;s happening in your agent wallets today.
-        </p>
+          <span className="material-symbols-outlined text-[18px]">add</span>
+          Add Agent
+        </Link>
       </div>
 
       {/* Stat cards */}
