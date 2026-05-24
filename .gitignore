@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+
+# Next.js
+web/.next/
+web/out/
+
+# Build outputs
+dist/
+build/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Local machine config
+.npmrc
+
+# Sensitive files
+*.pdf
+
+# Logs
+*.log
+npm-debug.log*
+
+# Vercel
+.vercel
