@@ -63,7 +63,7 @@ export default function Sidebar() {
   return (
     <aside className="fixed left-0 top-0 h-full w-[280px] bg-[color:var(--color-surface-container-lowest)] border-r border-[color:var(--color-outline-variant)] flex flex-col p-4 z-50">
       {/* Brand */}
-      <div className="flex items-center gap-3 px-2 mb-8">
+      <Link href="/dashboard" className="flex items-center gap-3 px-2 mb-8 cursor-pointer">
         <div className="w-10 h-10 bg-[color:var(--color-primary-container)] rounded-lg flex items-center justify-center">
           <span className="material-symbols-outlined text-white" style={{ fontVariationSettings: "'FILL' 1" }}>
             rocket_launch
@@ -78,7 +78,7 @@ export default function Sidebar() {
           </h1>
           <p className="text-[11px] text-[color:var(--color-secondary)]">Personal Workspace</p>
         </div>
-      </div>
+      </Link>
 
       {/* Main nav */}
       <nav className="flex-1 space-y-0.5 overflow-y-auto scrollbar-hide px-2">
