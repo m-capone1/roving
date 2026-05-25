@@ -57,11 +57,18 @@ function NavLink({
   );
 }
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen, onClose }: { isOpen?: boolean; onClose?: () => void }) {
   const pathname = usePathname();
 
   return (
-    <aside className="fixed left-0 top-0 h-full w-[280px] bg-[color:var(--color-surface-container-lowest)] border-r border-[color:var(--color-outline-variant)] flex flex-col p-4 z-50">
+    <aside
+      className={[
+        "fixed left-0 top-0 h-full w-[280px] bg-[color:var(--color-surface-container-lowest)] border-r border-[color:var(--color-outline-variant)] flex flex-col p-4 z-50",
+        "transition-transform duration-300",
+        "lg:translate-x-0",
+        isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0",
+      ].join(" ")}
+    >
       {/* Brand */}
       <Link href="/dashboard" className="flex items-center gap-3 px-2 mb-8 cursor-pointer">
         <div className="w-10 h-10 bg-[color:var(--color-primary-container)] rounded-lg flex items-center justify-center">

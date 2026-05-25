@@ -17,7 +17,7 @@ export function Step1({ f, set }: StepProps) {
         <Label>Description</Label>
         <Textarea value={f.description} onChange={(v) => set("description", v)} placeholder="What does this agent do?" />
       </div>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <Label>Agent type</Label>
           <Select

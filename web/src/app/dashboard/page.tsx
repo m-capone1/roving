@@ -192,7 +192,7 @@ export default function DashboardPage() {
   return (
     <div className="p-6 space-y-6">
       {/* Greeting */}
-      <div className="flex items-start justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
         <div>
           <h2
             className="text-[30px] font-bold text-[color:var(--color-on-surface)] tracking-tight"
@@ -214,7 +214,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Stat cards */}
-      <div className="grid grid-cols-5 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
         {[
           {
             label: "Total Balance",
@@ -276,9 +276,9 @@ export default function DashboardPage() {
       </div>
 
       {/* Main grid */}
-      <div className="grid grid-cols-12 gap-6">
+      <div className="grid grid-cols-1 xl:grid-cols-12 gap-6">
         {/* Left column */}
-        <div className="col-span-8 space-y-6">
+        <div className="xl:col-span-8 space-y-6">
           {/* Agents table */}
           <section className="bg-white rounded-xl border border-[color:var(--color-outline-variant)] card-shadow overflow-hidden">
             <div className="p-5 border-b border-[color:var(--color-outline-variant)] flex justify-between items-center bg-[color:var(--color-surface-container-low)]/50">
@@ -404,7 +404,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Right column */}
-        <div className="col-span-4 space-y-6">
+        <div className="xl:col-span-4 space-y-6">
           {/* Balance donut */}
           <section className="bg-white p-5 rounded-xl border border-[color:var(--color-outline-variant)] card-shadow">
             <div className="flex items-center justify-between mb-4">

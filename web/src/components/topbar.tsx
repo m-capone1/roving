@@ -1,6 +1,15 @@
-export default function Topbar() {
+export default function Topbar({ onMenuClick }: { onMenuClick?: () => void }) {
   return (
-    <header className="h-16 bg-[color:var(--color-surface)] border-b border-[color:var(--color-outline-variant)] flex items-center justify-between px-6 shrink-0">
+    <header className="h-16 bg-[color:var(--color-surface)] border-b border-[color:var(--color-outline-variant)] flex items-center justify-between px-4 sm:px-6 shrink-0 gap-3">
+      {/* Hamburger — mobile only */}
+      <button
+        onClick={onMenuClick}
+        className="lg:hidden p-2 rounded-lg hover:bg-[color:var(--color-surface-container)] transition-colors shrink-0"
+        aria-label="Open menu"
+      >
+        <span className="material-symbols-outlined text-[color:var(--color-secondary)]">menu</span>
+      </button>
+
       {/* Search */}
       <div className="flex-1 max-w-md">
         <div className="relative group">
@@ -12,7 +21,7 @@ export default function Topbar() {
             placeholder="Search anything..."
             type="text"
           />
-          <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1">
+          <div className="absolute right-3 top-1/2 -translate-y-1/2 hidden sm:flex items-center gap-1">
             <span className="text-[10px] font-bold text-[color:var(--color-outline)] bg-[color:var(--color-surface-variant)] px-1.5 py-0.5 rounded border border-[color:var(--color-outline-variant)]">
               ⌘K
             </span>
@@ -21,13 +30,13 @@ export default function Topbar() {
       </div>
 
       {/* Right actions */}
-      <div className="flex items-center gap-4">
-        <div className="flex items-center gap-2 mr-4 bg-[color:var(--color-surface-container-low)] px-3 py-1.5 rounded-lg border border-[color:var(--color-outline-variant)] text-[color:var(--color-secondary)]">
+      <div className="flex items-center gap-2 sm:gap-4">
+        <div className="hidden md:flex items-center gap-2 bg-[color:var(--color-surface-container-low)] px-3 py-1.5 rounded-lg border border-[color:var(--color-outline-variant)] text-[color:var(--color-secondary)]">
           <span className="material-symbols-outlined text-[20px]">calendar_today</span>
           <span className="text-[13px]">May 1 – May 31, 2025</span>
           <span className="material-symbols-outlined text-[18px]">keyboard_arrow_down</span>
         </div>
-        <button className="flex items-center gap-2 bg-[color:var(--color-surface)] border border-[color:var(--color-outline-variant)] px-4 py-2 rounded-lg text-[13px] font-semibold hover:bg-[color:var(--color-surface-container)] transition-colors">
+        <button className="hidden sm:flex items-center gap-2 bg-[color:var(--color-surface)] border border-[color:var(--color-outline-variant)] px-4 py-2 rounded-lg text-[13px] font-semibold hover:bg-[color:var(--color-surface-container)] transition-colors">
           <span className="material-symbols-outlined text-[20px]">ios_share</span>
           Export
         </button>

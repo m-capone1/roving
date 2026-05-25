@@ -59,9 +59,9 @@ export default function KYAPage() {
   }
 
   return (
-    <div className="flex flex-1">
-      {/* Step sidebar */}
-      <aside className="w-64 shrink-0 bg-[color:var(--color-surface-container-lowest)] border-r border-[color:var(--color-outline-variant)] py-10 px-6 flex flex-col gap-1">
+    <div className="flex flex-1 overflow-hidden">
+      {/* Step sidebar — hidden on mobile */}
+      <aside className="hidden sm:flex w-64 shrink-0 bg-[color:var(--color-surface-container-lowest)] border-r border-[color:var(--color-outline-variant)] py-10 px-6 flex-col gap-1">
         <p className="text-[11px] font-bold uppercase tracking-widest text-[color:var(--color-outline)] mb-4 px-2">
           Verification Steps
         </p>
@@ -103,12 +103,28 @@ export default function KYAPage() {
 
       {/* Form area */}
       <div className="flex-1 flex flex-col overflow-hidden">
-        <div className="flex-1 overflow-y-auto px-10 py-10">
+        {/* Mobile progress bar */}
+        <div className="sm:hidden px-4 pt-4 pb-2">
+          <div className="flex items-center justify-between mb-1.5">
+            <p className="text-[11px] font-bold uppercase tracking-widest text-[color:var(--color-primary)]">
+              {STEPS[step - 1].label}
+            </p>
+            <p className="text-xs text-[color:var(--color-secondary)]">Step {step} of 6</p>
+          </div>
+          <div className="h-1.5 w-full bg-[color:var(--color-surface-container-high)] rounded-full overflow-hidden">
+            <div
+              className="h-full bg-[color:var(--color-primary)] rounded-full transition-all duration-500"
+              style={{ width: `${((step - 1) / 5) * 100}%` }}
+            />
+          </div>
+        </div>
+
+        <div className="flex-1 overflow-y-auto px-4 py-6 sm:px-10 sm:py-10">
           <div className="max-w-xl">
-            <p className="text-xs font-bold uppercase tracking-widest text-[color:var(--color-primary)] mb-1">
+            <p className="hidden sm:block text-xs font-bold uppercase tracking-widest text-[color:var(--color-primary)] mb-1">
               Step {step} — {STEPS[step - 1].label}
             </p>
-            <h2 className="text-2xl font-bold text-[color:var(--color-on-surface)] mb-6" style={{ fontFamily: "var(--font-display)" }}>
+            <h2 className="text-xl sm:text-2xl font-bold text-[color:var(--color-on-surface)] mb-6" style={{ fontFamily: "var(--font-display)" }}>
               {STEP_TITLES[step - 1]}
             </h2>
             <div key={animKey} className={direction === "forward" ? "animate-slide-in-right" : "animate-slide-in-left"}>
@@ -118,7 +134,7 @@ export default function KYAPage() {
         </div>
 
         {/* Nav buttons */}
-        <div className="shrink-0 border-t border-[color:var(--color-outline-variant)] px-10 py-5 flex justify-between items-center bg-[color:var(--color-surface-container-lowest)]">
+        <div className="shrink-0 border-t border-[color:var(--color-outline-variant)] px-4 py-4 sm:px-10 sm:py-5 flex justify-between items-center bg-[color:var(--color-surface-container-lowest)]">
           <button
             onClick={() => step > 1 && goTo(step - 1, "backward")}
             disabled={step === 1}
@@ -141,10 +157,11 @@ export default function KYAPage() {
             <button
               onClick={handleSubmit}
               disabled={!canAdvance}
-              className="flex items-center gap-2 px-5 py-2 rounded-lg bg-[color:var(--color-primary-container)] text-white text-sm font-semibold hover:opacity-90 transition-opacity disabled:opacity-30 disabled:pointer-events-none"
+              className="flex items-center gap-2 px-4 sm:px-5 py-2 rounded-lg bg-[color:var(--color-primary-container)] text-white text-sm font-semibold hover:opacity-90 transition-opacity disabled:opacity-30 disabled:pointer-events-none"
             >
               <span className="material-symbols-outlined text-[18px]">verified</span>
-              Submit for Verification
+              <span className="hidden sm:inline">Submit for Verification</span>
+              <span className="sm:hidden">Submit</span>
             </button>
           )}
         </div>
