@@ -104,6 +104,10 @@
   box-sizing: border-box;
 }
 
+button, select, input[type="checkbox"], input[type="radio"] {
+  cursor: pointer;
+}
+
 body {
   font-family: var(--font-sans);
 }
