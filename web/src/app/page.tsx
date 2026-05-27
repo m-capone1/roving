@@ -1,5 +1,529 @@
-import { redirect } from "next/navigation";
+import Image from "next/image";
+import Navbar from "@/components/landing/Navbar";
+import WaitlistForm from "@/components/landing/WaitlistForm";
 
-export default function Home() {
-  redirect("/dashboard");
+// ─── Features ────────────────────────────────────────────────────────────────
+const features = [
+  {
+    tag: "Agent Bank Accounts",
+    title: "Open a global account for your AI agent",
+    body: "Create dedicated wallets, cards and controls for agents that need to operate across borders, platforms and payments.",
+    icon: "account_balance",
+    color: "from-[#dde1ff] to-[#b7c4ff]",
+  },
+  {
+    tag: "Global Payments",
+    title: "Convert and move money for agent workflows",
+    body: "Let your agents pay APIs, vendors and services globally while you control limits, rules and permissions.",
+    icon: "sync_alt",
+    color: "from-[#6ffbbe] to-[#007550]",
+  },
+  {
+    tag: "Virtual Cards",
+    title: "Give your agents controlled spending power",
+    body: "Issue virtual cards for every AI agent with limits, approvals and real-time controls built in.",
+    icon: "credit_card",
+    color: "from-[#b7c4ff] to-[#003ec7]",
+  },
+  {
+    tag: "Secure Payments",
+    title: "Let your agents handle payments safely",
+    body: "Give agents permission to move money for workflows, operations and subscriptions while you stay in control of approvals, limits and audit trails.",
+    icon: "shield",
+    color: "from-[#d0e1fb] to-[#505f76]",
+  },
+  {
+    tag: "Voice & Text Commands",
+    title: "Initiate payments with a simple voice or text command.",
+    body: "Let Phoebe execute transactions using your existing rules, approvals and payment rails.",
+    icon: "mic",
+    color: "from-[#dde1ff] to-[#0052ff]",
+  },
+];
+
+// ─── Use cases ───────────────────────────────────────────────────────────────
+const useCases = [
+  { title: "Agentic Banking", body: "Roving helps businesses give AI agents accounts, wallets and cards with built-in controls and approvals.", icon: "corporate_fare" },
+  { title: "Invoice Payments", body: "Roving helps teams automate invoice discovery, validation and payment through AI-driven workflows.", icon: "receipt_long" },
+  { title: "Subscription Management", body: "Roving helps agents manage recurring SaaS, API and infrastructure payments without manual operations.", icon: "autorenew" },
+  { title: "Travel & Booking", body: "Roving helps travel agents securely book flights, hotels and transport within spending policies.", icon: "flight" },
+  { title: "Procurement Operations", body: "Roving helps businesses automate purchasing workflows while keeping humans in control of approvals and limits.", icon: "shopping_cart" },
+  { title: "Treasury & Budgeting", body: "Roving helps companies allocate, monitor and control spending across agents, teams and currencies.", icon: "account_balance_wallet" },
+  { title: "AI Commerce", body: "Roving helps autonomous systems transact safely across digital services, APIs and marketplaces.", icon: "storefront" },
+  { title: "Compliance & Audit", body: "Roving helps organizations track every request, approval and transaction with complete execution visibility.", icon: "fact_check" },
+];
+
+// ─── Comparison table ────────────────────────────────────────────────────────
+const comparisons = [
+  { roving: "Full financial workspace for agent owners", others: "Usually focused on one layer: payments, wallets or identity" },
+  { roving: "Phoebe executes banking tasks by text or voice", others: "Mostly API-first flows requiring technical setup" },
+  { roving: "Dedicated accounts, wallets and cards per agent", others: "Often shared balances or payment rails without full account structure" },
+  { roving: "Owner-defined rules before money moves", others: "Controls often happen at payment level only" },
+  { roving: "Approvals, limits, vendors and categories in one place", others: "Rules are usually fragmented across tools" },
+  { roving: "Execution trace for every transaction", others: "Logs show payment status, not the full decision trail" },
+  { roving: "Personal, team and enterprise modes", others: "Usually built for developers or businesses only" },
+  { roving: "Multi-currency and multi-rail roadmap", others: "Often tied to cards, crypto or one payment method" },
+  { roving: "Agent financial history over time", others: "Little focus on long-term agent trust records" },
+  { roving: "Human control built into every workflow", others: "Often optimized for agent autonomy first" },
+];
+
+// ─── KYA checks ──────────────────────────────────────────────────────────────
+const kyaChecks = [
+  { label: "Agent ownership", detail: "Who owns, controls and is responsible for the agent." },
+  { label: "Agent purpose", detail: "What the agent is designed to do and why it needs financial access." },
+  { label: "Build environment", detail: "Whether it runs on OpenAI, LangChain, CrewAI, AutoGen, MCP tools, custom code or another stack." },
+  { label: "Connected tools", detail: "What APIs, apps, wallets, accounts and services the agent can access." },
+  { label: "Financial permissions", detail: "Whether it can spend, transfer, receive, convert, subscribe or request approvals." },
+  { label: "Risk profile", detail: "How sensitive the agent's actions are based on spend type, limits, vendors and workflow." },
+  { label: "Behaviour history", detail: "A growing record of past approvals, blocked actions, transactions and policy checks." },
+];
+
+// ─── API features ─────────────────────────────────────────────────────────────
+const apiFeatures = [
+  { num: "01", title: "Agent float", body: "Pre-fund agents with the exact money they need to complete work." },
+  { num: "02", title: "Spend expiration", body: "Give agents temporary budgets that expire after a task, trip or campaign." },
+  { num: "03", title: "Merchant memory", body: "Remember trusted vendors so approved payments get faster over time." },
+  { num: "04", title: "Failed payment recovery", body: "Let agents retry, reroute or escalate failed payments without breaking workflows." },
+  { num: "05", title: "Agent receipts", body: "Every agent action creates a receipt with purpose, approval and outcome." },
+  { num: "06", title: "Reusable playbooks", body: "Save payment rules once and apply them to every similar agent workflow." },
+];
+
+// ─── Footer columns ───────────────────────────────────────────────────────────
+const footerCols = [
+  {
+    heading: "Products",
+    links: ["Agent Accounts", "Virtual Cards", "Agent Wallets", "Global Payments", "Multi-Currency", "Phoebe AI", "KYA", "Approvals & Controls", "API & SDKs"],
+  },
+  {
+    heading: "Developers",
+    links: ["API Docs", "Sandbox", "Webhooks", "SDKs", "Status", "Changelog", "Guides"],
+  },
+  {
+    heading: "Company",
+    links: ["About", "Careers", "Blog", "Press", "Trust Center", "Contact"],
+  },
+  {
+    heading: "Use Cases",
+    links: ["AI Startups", "Agent Builders", "Enterprises", "Developers", "Finance Teams", "Operations Teams", "Autonomous Commerce"],
+  },
+  {
+    heading: "Legal",
+    links: ["Privacy Policy", "Terms", "Acceptable Use", "Cookie Policy", "Risk Disclosure", "Compliance"],
+  },
+  {
+    heading: "Contact",
+    links: ["hello@roving.money", "020 3307 6448", "71–75 Shelton Street", "Covent Garden", "London, WC2H 9JQ"],
+  },
+];
+
+export default function HomePage() {
+  return (
+    <div className="min-h-screen bg-white text-[color:var(--color-on-surface)]">
+      <Navbar />
+
+      {/* ── HERO ──────────────────────────────────────────────────────────── */}
+      <section className="relative pt-24 overflow-hidden min-h-screen" style={{ background: "linear-gradient(to bottom, #ffffff 0%, #dde5ff 100%)" }}>
+        <div className="max-w-[1200px] mx-auto px-6 w-full h-full min-h-screen grid md:grid-cols-2 gap-12">
+          {/* Left copy — vertically centred */}
+          <div className="flex flex-col justify-center gap-8 z-10 py-24">
+            <div className="inline-flex self-start items-center gap-2 px-4 py-2 rounded-full text-sm text-[color:var(--color-primary)] font-medium" style={{ backgroundColor: "#014BAA26" }}>
+              The Neo Bank for the Agentic Economy
+            </div>
+
+            <h1
+              className="text-5xl lg:text-7xl font-extrabold leading-[1.05] text-[color:var(--color-on-surface)]"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              Banking at the speed of{" "}
+              <em className="italic text-[color:var(--color-primary)]">compute.</em>
+            </h1>
+
+            <p className="text-lg text-[color:var(--color-secondary)] leading-relaxed max-w-lg">
+              Roving gives every AI agent a real bank account, smart cards, spending rules and an identity you can trust.
+            </p>
+
+            <a
+              href="#waitlist"
+              className="inline-flex self-start items-center gap-2 text-white font-semibold px-8 py-4 rounded-full transition-colors text-base shadow-lg"
+              style={{ backgroundColor: "#014BAA" }}
+            >
+              Get early access
+            </a>
+          </div>
+
+          {/* Right illustration — bottom-flush, ~84% of section height */}
+          <div className="relative hidden md:flex items-end justify-center self-stretch">
+            <Image
+              src="/hero.png"
+              alt="Roving platform illustration"
+              width={760}
+              height={816}
+              className="w-full max-h-[84%] object-contain object-bottom drop-shadow-xl"
+              priority
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ── PARTNERS ──────────────────────────────────────────────────────── */}
+      <section className="py-20 border-t border-[color:var(--color-outline-variant)]/40">
+        <div className="max-w-[1200px] mx-auto px-6 flex flex-col items-center gap-16">
+          <p className="text-xl font-medium text-center text-[color:var(--color-secondary)] max-w-2xl leading-snug">
+            Connect your stack and supercharge your agents to do more in a controlled and secure way.
+          </p>
+          <Image
+            src="/companies.png"
+            alt="Vercel, Twilio, Stripe, OpenAI, Anthropic and more"
+            width={1200}
+            height={120}
+            className="w-full object-contain scale-125"
+          />
+        </div>
+      </section>
+
+      {/* ── PRODUCT SCREENSHOT ────────────────────────────────────────────── */}
+      <section className="py-20 bg-[color:var(--color-surface-container-low)]">
+        <div className="max-w-[1100px] mx-auto px-6">
+          <div className="relative">
+            <Image
+              src="/account-screenshot-2.png"
+              alt="Roving dashboard — manage your AI agents, wallets and cards"
+              width={1200}
+              height={800}
+              className="w-full rounded-3xl shadow-2xl shadow-black/10"
+            />
+            {/* New logo overlay — percentage-based so it stays put at any size */}
+            <div className="absolute" style={{ top: "2.6%", left: "2.8%" }}>
+              <Image
+                src="/logo-symbol.png"
+                alt=""
+                width={24}
+                height={24}
+                className="w-[2.4%] h-auto object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FEATURES ──────────────────────────────────────────────────────── */}
+      <section id="features" className="py-24">
+        <div className="max-w-[1200px] mx-auto px-6 flex flex-col gap-32">
+          {features.map((feat, i) => (
+            <div
+              key={feat.tag}
+              className={`grid md:grid-cols-2 gap-16 items-center ${i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""}`}
+            >
+              {/* Text */}
+              <div className="flex flex-col gap-6">
+                <span className="inline-flex self-start items-center gap-2 px-3 py-1.5 rounded-full bg-[color:var(--color-primary-fixed)] text-[color:var(--color-on-primary-fixed)] text-xs font-semibold">
+                  {feat.tag}
+                </span>
+                <h2
+                  className="text-3xl lg:text-4xl font-extrabold leading-snug text-[color:var(--color-on-surface)]"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  {feat.title}
+                </h2>
+                <p className="text-base text-[color:var(--color-secondary)] leading-relaxed">
+                  {feat.body}
+                </p>
+                <a
+                  href="#waitlist"
+                  className="inline-flex self-start items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all"
+                >
+                  Get early access
+                  <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </a>
+              </div>
+
+              {/* Visual */}
+              <div className={`h-[380px] rounded-3xl bg-gradient-to-br ${feat.color} flex items-center justify-center shadow-xl`}>
+                <span
+                  className="material-symbols-outlined text-white/30 text-[120px]"
+                  style={{ fontVariationSettings: "'FILL' 1" }}
+                >
+                  {feat.icon}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── USE CASES ─────────────────────────────────────────────────────── */}
+      <section id="use-cases" className="py-24 bg-[color:var(--color-surface-container-low)]">
+        <div className="max-w-[1200px] mx-auto px-6 flex flex-col gap-12">
+          <div className="flex flex-col gap-3">
+            <span className="text-sm font-semibold text-[color:var(--color-primary)] uppercase tracking-widest">Use Cases</span>
+            <h2
+              className="text-4xl font-extrabold text-[color:var(--color-on-surface)]"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              Agentic Banking
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {useCases.map((uc) => (
+              <div key={uc.title} className="bg-white rounded-2xl p-6 flex flex-col gap-4 card-shadow hover:shadow-md transition-shadow group">
+                <div className="w-10 h-10 rounded-xl bg-[color:var(--color-primary-fixed)] flex items-center justify-center">
+                  <span
+                    className="material-symbols-outlined text-[color:var(--color-on-primary-fixed)] text-[22px]"
+                    style={{ fontVariationSettings: "'FILL' 1" }}
+                  >
+                    {uc.icon}
+                  </span>
+                </div>
+                <h3 className="font-bold text-[color:var(--color-on-surface)] text-base">{uc.title}</h3>
+                <p className="text-sm text-[color:var(--color-secondary)] leading-relaxed">{uc.body}</p>
+                <a
+                  href="#waitlist"
+                  className="inline-flex items-center gap-1 text-xs font-semibold text-[color:var(--color-primary)] mt-auto group-hover:gap-2 transition-all"
+                >
+                  Get early access
+                  <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── THESIS ────────────────────────────────────────────────────────── */}
+      <section id="thesis" className="py-24 bg-[color:var(--color-primary)]">
+        <div className="max-w-[900px] mx-auto px-6 flex flex-col gap-10">
+          <span className="text-sm font-semibold text-[color:var(--color-inverse-primary)] uppercase tracking-widest">
+            The Roving Thesis
+          </span>
+          <p className="text-2xl lg:text-3xl font-medium text-white leading-relaxed">
+            We believe AI agents are becoming part of the economy, not just part of the workflow. They will buy, book, subscribe, pay and manage financial activity on behalf of people and businesses. But that future needs a safe financial layer.
+          </p>
+          <p className="text-lg text-white/70 leading-relaxed">
+            Right now there is no infrastructure built for that. Organisations want to give agents financial authority without losing control, and the tools to do that simply do not exist yet.
+            <br /><br />
+            Roving is building the identity, accounts, cards, rules, approvals and audit trails that make autonomous financial activity something organisations can actually trust and govern.
+            <br /><br />
+            We are building the financial operating system for the agentic economy.
+          </p>
+          <a
+            href="#waitlist"
+            className="inline-flex self-start items-center gap-2 text-white font-semibold border border-white/30 px-6 py-3 rounded-full hover:bg-white/10 transition-colors"
+          >
+            Read the Roving Thesis
+            <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </a>
+        </div>
+      </section>
+
+      {/* ── WHY ROVING ────────────────────────────────────────────────────── */}
+      <section className="py-24">
+        <div className="max-w-[1200px] mx-auto px-6 flex flex-col gap-12">
+          <div className="flex flex-col gap-4">
+            <h2
+              className="text-4xl font-extrabold text-[color:var(--color-on-surface)]"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              Why Choose Roving?
+            </h2>
+            <p className="text-lg text-[color:var(--color-secondary)] max-w-xl">
+              Compare and contrast some of Roving&apos;s benefits with other payment providers. Don&apos;t just take our word for it.
+            </p>
+          </div>
+
+          <div className="rounded-2xl border border-[color:var(--color-outline-variant)] overflow-hidden">
+            {/* Table header */}
+            <div className="grid grid-cols-2 bg-[color:var(--color-surface-container-low)]">
+              <div className="px-6 py-4 border-r border-[color:var(--color-outline-variant)]">
+                <span className="text-sm font-bold text-[color:var(--color-primary)]">Roving advantages</span>
+              </div>
+              <div className="px-6 py-4">
+                <span className="text-sm font-bold text-[color:var(--color-secondary)]">Others</span>
+              </div>
+            </div>
+
+            {comparisons.map((row, i) => (
+              <div
+                key={i}
+                className={`grid grid-cols-2 border-t border-[color:var(--color-outline-variant)] ${i % 2 === 0 ? "bg-white" : "bg-[color:var(--color-surface-container-lowest)]"}`}
+              >
+                <div className="px-6 py-5 border-r border-[color:var(--color-outline-variant)] flex items-start gap-3">
+                  <span
+                    className="material-symbols-outlined text-[color:var(--color-tertiary-container)] mt-0.5 shrink-0 text-[20px]"
+                    style={{ fontVariationSettings: "'FILL' 1", color: "#007550" }}
+                  >
+                    check_circle
+                  </span>
+                  <span className="text-sm text-[color:var(--color-on-surface)] font-medium">{row.roving}</span>
+                </div>
+                <div className="px-6 py-5 flex items-start gap-3">
+                  <span className="material-symbols-outlined text-[color:var(--color-outline)] mt-0.5 shrink-0 text-[20px]">
+                    remove
+                  </span>
+                  <span className="text-sm text-[color:var(--color-secondary)]">{row.others}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── KYA ───────────────────────────────────────────────────────────── */}
+      <section className="py-24 bg-[color:var(--color-surface-container-low)]">
+        <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
+          {/* Left */}
+          <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-4">
+              <span className="text-sm font-semibold text-[color:var(--color-primary)] uppercase tracking-widest">KYA — Know Your Agent</span>
+              <h2
+                className="text-4xl font-extrabold text-[color:var(--color-on-surface)] leading-tight"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                Give your AI agent a verified financial identity.
+              </h2>
+              <p className="text-base text-[color:var(--color-secondary)] leading-relaxed">
+                Before an agent can hold funds, receive a card or move money, Roving verifies who owns it, what it does, what tools it uses and what financial actions it is allowed to take.
+              </p>
+            </div>
+            <div className="bg-[color:var(--color-primary-fixed)] rounded-2xl p-5 flex flex-col gap-2">
+              <p className="text-sm font-semibold text-[color:var(--color-on-primary-fixed)]">Why it matters</p>
+              <p className="text-sm text-[color:var(--color-on-primary-fixed-variant)] leading-relaxed">
+                Roving KYA is not just identity verification. It is the trust layer that decides whether an agent is ready for financial access.
+              </p>
+            </div>
+            <a
+              href="#waitlist"
+              className="inline-flex self-start items-center gap-2 bg-[color:var(--color-primary)] text-white font-semibold px-6 py-3 rounded-full hover:bg-[color:var(--color-primary-container)] transition-colors"
+            >
+              Verify your first agent
+              <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </a>
+          </div>
+
+          {/* Right — check list */}
+          <div className="flex flex-col gap-4">
+            <p className="text-sm font-semibold text-[color:var(--color-secondary)] mb-2">What Roving KYA checks</p>
+            {kyaChecks.map((check) => (
+              <div key={check.label} className="bg-white rounded-xl p-4 flex items-start gap-4 card-shadow">
+                <span
+                  className="material-symbols-outlined text-[20px] mt-0.5 shrink-0"
+                  style={{ fontVariationSettings: "'FILL' 1", color: "#003ec7" }}
+                >
+                  verified
+                </span>
+                <div>
+                  <p className="text-sm font-semibold text-[color:var(--color-on-surface)]">{check.label}</p>
+                  <p className="text-sm text-[color:var(--color-secondary)] mt-0.5">{check.detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── API SANDBOX ───────────────────────────────────────────────────── */}
+      <section id="api" className="py-24 bg-[color:var(--color-inverse-surface)]">
+        <div className="max-w-[1200px] mx-auto px-6 flex flex-col gap-12">
+          <div className="flex flex-col gap-4 max-w-2xl">
+            <span className="text-sm font-semibold text-[color:var(--color-inverse-primary)] uppercase tracking-widest">
+              API Sandbox
+            </span>
+            <h2
+              className="text-4xl font-extrabold text-[color:var(--color-inverse-on-surface)] leading-tight"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              Build and test agent payments before going live.
+            </h2>
+            <p className="text-base text-[color:var(--color-inverse-on-surface)]/70 leading-relaxed">
+              Roving&apos;s sandbox lets developers simulate how AI agents request payments, trigger approvals, follow spending rules and generate audit trails. Test every part of the agent finance flow without moving real money.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {apiFeatures.map((feat) => (
+              <div key={feat.num} className="rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col gap-3 hover:bg-white/10 transition-colors">
+                <span className="text-xs font-bold text-[color:var(--color-inverse-primary)] font-mono">{feat.num} —</span>
+                <h3 className="text-base font-bold text-[color:var(--color-inverse-on-surface)]">{feat.title}</h3>
+                <p className="text-sm text-[color:var(--color-inverse-on-surface)]/60 leading-relaxed">{feat.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── WAITLIST ──────────────────────────────────────────────────────── */}
+      <section id="waitlist" className="py-24 bg-[color:var(--color-surface-container-low)]">
+        <div className="max-w-[900px] mx-auto px-6 flex flex-col gap-12">
+          <div className="flex flex-col gap-4">
+            <h2
+              className="text-4xl lg:text-5xl font-extrabold text-[color:var(--color-on-surface)] leading-tight"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              The #1 neo bank for humans and their AI agents
+            </h2>
+            <h3 className="text-xl font-bold text-[color:var(--color-primary)]">
+              Join the cool kids network
+            </h3>
+            <p className="text-base text-[color:var(--color-secondary)] leading-relaxed max-w-xl">
+              Get a front-row seat to the future of agentic finance. Product drops, early demos, founder notes, community updates and sharp ideas before everyone else catches up.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-3xl p-8 card-shadow border border-[color:var(--color-outline-variant)]/50">
+            <WaitlistForm />
+          </div>
+        </div>
+      </section>
+
+      {/* ── FOOTER ────────────────────────────────────────────────────────── */}
+      <footer className="bg-[color:var(--color-inverse-surface)] text-[color:var(--color-inverse-on-surface)]">
+        <div className="max-w-[1200px] mx-auto px-6 pt-16 pb-8 flex flex-col gap-16">
+          {/* Top: logo + columns */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-8">
+            {/* Brand */}
+            <div className="col-span-2 md:col-span-3 lg:col-span-1 flex flex-col gap-4">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 bg-[color:var(--color-primary-container)] rounded-lg flex items-center justify-center">
+                  <span className="material-symbols-outlined text-white text-[18px]" style={{ fontVariationSettings: "'FILL' 1" }}>
+                    rocket_launch
+                  </span>
+                </div>
+                <span className="text-lg font-bold" style={{ fontFamily: "var(--font-display)" }}>Roving</span>
+              </div>
+            </div>
+
+            {/* Footer columns */}
+            {footerCols.map((col) => (
+              <div key={col.heading} className="flex flex-col gap-3">
+                <p className="text-[11px] font-bold uppercase tracking-widest text-[color:var(--color-inverse-on-surface)]/50">
+                  {col.heading}
+                </p>
+                {col.links.map((link) => (
+                  <a
+                    key={link}
+                    href="#"
+                    className="text-sm text-[color:var(--color-inverse-on-surface)]/70 hover:text-[color:var(--color-inverse-on-surface)] transition-colors"
+                  >
+                    {link}
+                  </a>
+                ))}
+              </div>
+            ))}
+          </div>
+
+          {/* Legal text */}
+          <div className="border-t border-white/10 pt-8 flex flex-col gap-4">
+            <p className="text-xs text-[color:var(--color-inverse-on-surface)]/50 leading-relaxed max-w-3xl">
+              Roving is a product of Calen Financial Technologies Ltd. Calen Financial Technologies is a financial technology company building AI-native financial infrastructure for businesses, developers and the emerging agentic economy. Roving is not yet a bank. We are building the banking experience for AI agents by working with licensed banking, card issuing, payment and regulated financial infrastructure partners where required. Services may vary by jurisdiction and are subject to eligibility, compliance checks and partner approval.
+            </p>
+            <p className="text-xs text-[color:var(--color-inverse-on-surface)]/40">
+              Built with love from London and San Francisco 💙
+            </p>
+            <p className="text-xs text-[color:var(--color-inverse-on-surface)]/40">
+              © 2026 Calen Financial Technologies Ltd. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
 }
