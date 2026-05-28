@@ -836,29 +836,52 @@ export default function HomePage() {
       </section>
 
       {/* ── API SANDBOX ───────────────────────────────────────────────────── */}
-      <section id="api" className="py-24 bg-[color:var(--color-inverse-surface)]">
-        <div className="max-w-[1200px] mx-auto px-6 flex flex-col gap-12">
-          <div className="flex flex-col gap-4 max-w-2xl">
-            <span className="text-sm font-semibold text-[color:var(--color-inverse-primary)] uppercase tracking-widest">
-              API Sandbox
-            </span>
+      <section id="api" className="pt-4 pb-24 bg-white">
+        <div className="max-w-[1200px] mx-auto px-6 flex flex-col items-center gap-12">
+          {/* Centered heading + description */}
+          <div className="flex flex-col items-center gap-4 text-center max-w-2xl">
             <h2
-              className="text-4xl font-extrabold text-[color:var(--color-inverse-on-surface)] leading-tight"
+              className="text-5xl font-extrabold text-[color:var(--color-on-surface)] leading-tight"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Build and test agent payments before going live.
+              API Sandbox
             </h2>
-            <p className="text-base text-[color:var(--color-inverse-on-surface)]/70 leading-relaxed">
-              Roving&apos;s sandbox lets developers simulate how AI agents request payments, trigger approvals, follow spending rules and generate audit trails. Test every part of the agent finance flow without moving real money.
+            <p className="text-base text-[color:var(--color-secondary)] leading-relaxed">
+              Build and test agent payments before going live. Roving&apos;s sandbox lets developers simulate how AI agents request payments, trigger approvals, follow spending rules and generate audit trails. Test every part of the agent finance flow without moving real money.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {apiFeatures.map((feat) => (
-              <div key={feat.num} className="rounded-2xl border border-white/10 bg-white/5 p-6 flex flex-col gap-3 hover:bg-white/10 transition-colors">
-                <span className="text-xs font-bold text-[color:var(--color-inverse-primary)] font-mono">{feat.num} —</span>
-                <h3 className="text-base font-bold text-[color:var(--color-inverse-on-surface)]">{feat.title}</h3>
-                <p className="text-sm text-[color:var(--color-inverse-on-surface)]/60 leading-relaxed">{feat.body}</p>
+          {/* Dashboard screenshot */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/api-sandboz.png"
+            alt="Roving API Sandbox dashboard"
+            className="w-full rounded-3xl shadow-2xl shadow-black/20"
+          />
+        </div>
+      </section>
+
+      {/* ── NUMBERED FEATURES ─────────────────────────────────────────────── */}
+      <section className="pb-24 pt-12 bg-white">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="grid grid-cols-3 gap-x-4 gap-y-10">
+            {apiFeatures.map((feat, i) => (
+              <div
+                key={feat.num}
+                className="rounded-2xl relative flex flex-col px-6 pb-6"
+                style={{ backgroundColor: "#161b27", paddingTop: "calc(60% + 16px)", overflow: "visible" }}
+              >
+                {/* Image — overflows top of card by ~5% */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`/num-${i + 1}.png`}
+                  alt=""
+                  className="absolute w-[72%] h-auto object-contain pointer-events-none"
+                  style={{ top: 0, left: "50%", transform: "translate(-50%, -20%)" }}
+                />
+                <p className="text-sm text-white/70 mb-3 font-medium">{feat.num} — {feat.title}</p>
+                <h3 className="text-lg font-bold text-white mb-2" style={{ fontFamily: "var(--font-display)" }}>{feat.title}</h3>
+                <p className="text-base text-white/60 leading-relaxed">{feat.body}</p>
               </div>
             ))}
           </div>
