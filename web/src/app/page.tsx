@@ -349,6 +349,165 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── VIRTUAL CARDS ─────────────────────────────────────────────────── */}
+      <section className="py-24 bg-white">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="rounded-3xl grid md:grid-cols-2 items-stretch overflow-hidden" style={{ backgroundColor: "#F8F3F0", minHeight: "520px" }}>
+            {/* Left: copy */}
+            <div className="flex flex-col gap-6 p-8 pt-10 md:p-12 md:py-16">
+              <span
+                className="inline-flex self-start items-center px-3 py-1.5 rounded-full text-xs font-semibold"
+                style={{ backgroundColor: "#EDE8E5", color: "#003ec7" }}
+              >
+                Virtual Cards
+              </span>
+              <h2
+                className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-[color:var(--color-on-surface)]"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                Give your agents controlled spending power
+              </h2>
+              <p className="text-base text-[color:var(--color-secondary)] leading-relaxed max-w-md">
+                Issue virtual cards for every AI agent with limits, approvals and real-time controls built in.
+              </p>
+              <a
+                href="#waitlist"
+                className="inline-flex self-start items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all"
+              >
+                Get early access
+                <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </a>
+            </div>
+
+            {/* Right: phone + orbiting company logos */}
+            <div className="hidden md:block relative min-h-[420px]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/semi-circle-companies.png"
+                alt=""
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[75%] w-[70%] h-auto"
+              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/cell-phone-4.png"
+                alt="Roving virtual cards on mobile"
+                className="absolute left-1/2 -translate-x-1/2 w-[31%] h-auto drop-shadow-2xl z-10" style={{ bottom: "3%" }}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECURE PAYMENTS ───────────────────────────────────────────────── */}
+      <section className="pt-6 pb-24 bg-white">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="rounded-3xl grid md:grid-cols-2 items-stretch overflow-hidden" style={{ backgroundColor: "#F8F3F0", minHeight: "480px" }}>
+            {/* Left: copy */}
+            <div className="flex flex-col gap-6 p-8 pt-10 md:p-12 md:py-16">
+              <span
+                className="inline-flex self-start items-center px-3 py-1.5 rounded-full text-xs font-semibold"
+                style={{ backgroundColor: "#EDE8E5", color: "#003ec7" }}
+              >
+                Secure payments
+              </span>
+              <h2
+                className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-[color:var(--color-on-surface)]"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                Let your agents handle payments safely
+              </h2>
+              <p className="text-base text-[color:var(--color-secondary)] leading-relaxed max-w-md">
+                Give agents permission to move money for workflows, operations and subscriptions while you stay in control of approvals, limits and audit trails.
+              </p>
+              <a
+                href="#waitlist"
+                className="inline-flex self-start items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all"
+              >
+                Get early access
+                <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </a>
+            </div>
+
+            {/* Right: robot illustration */}
+            <div className="hidden md:flex items-center justify-center relative p-8">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/robot-gemini-img.png"
+                alt="Secure agent payments illustration"
+                className="w-[85%] h-auto object-contain drop-shadow-xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── VOICE & TEXT PAYMENTS ─────────────────────────────────────────── */}
+      <section className="py-6 bg-white">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="grid gap-4" style={{ gridTemplateColumns: "2fr 1fr", height: "540px" }}>
+
+            {/* Left 2fr card */}
+            <div className="rounded-3xl overflow-hidden relative" style={{ backgroundColor: "#F8F3F0" }}>
+              {/* Copy */}
+              <div className="flex flex-col gap-6 p-10 pt-12 max-w-[55%]">
+                <span
+                  className="inline-flex self-start items-center px-3 py-1.5 rounded-full text-xs font-semibold"
+                  style={{ backgroundColor: "#EDE8E5", color: "#003ec7" }}
+                >
+                  Quick payment method
+                </span>
+                <h2
+                  className="text-3xl lg:text-4xl font-extrabold leading-tight text-[color:var(--color-on-surface)]"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  Initiate payments with a simple voice or text command.
+                </h2>
+                <p className="text-sm text-[color:var(--color-secondary)] leading-relaxed">
+                  Let Phoebe execute transactions using your existing rules, approvals and payment rails.
+                </p>
+                <a
+                  href="#waitlist"
+                  className="inline-flex self-start items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all"
+                >
+                  Get early access
+                  <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </a>
+              </div>
+
+              {/* Floating chip */}
+              <div className="absolute bottom-10 left-10 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-md text-xs font-medium text-[color:var(--color-on-surface)]">
+                <span
+                  className="material-symbols-outlined text-[16px]"
+                  style={{ fontVariationSettings: "'FILL' 1", color: "#003ec7" }}
+                >
+                  chat
+                </span>
+                Payments with a simple voice or text
+              </div>
+
+              {/* Girl photo */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/girl-phone.png"
+                alt=""
+                className="absolute bottom-0 right-10 h-[82%] w-auto object-contain object-bottom drop-shadow-lg"
+              />
+            </div>
+
+            {/* Right 1fr card */}
+            <div className="rounded-3xl overflow-hidden relative" style={{ backgroundColor: "#F8F3F0" }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/phone-5.png"
+                alt="Roving app"
+                className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[70%] h-auto object-contain drop-shadow-xl"
+              />
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* ── FEATURES ──────────────────────────────────────────────────────── */}
       <section id="features" className="py-24">
         <div className="max-w-[1200px] mx-auto px-6 flex flex-col gap-20 md:gap-32">
