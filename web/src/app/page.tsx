@@ -733,54 +733,104 @@ export default function HomePage() {
       </section>
 
       {/* ── KYA ───────────────────────────────────────────────────────────── */}
-      <section className="py-24 bg-[color:var(--color-surface-container-low)]">
-        <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-10 md:gap-16 items-start">
-          {/* Left */}
-          <div className="flex flex-col gap-8">
-            <div className="flex flex-col gap-4">
-              <span className="text-sm font-semibold text-[color:var(--color-primary)] uppercase tracking-widest">KYA — Know Your Agent</span>
-              <h2
-                className="text-4xl font-extrabold text-[color:var(--color-on-surface)] leading-tight"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                Give your AI agent a verified financial identity.
-              </h2>
-              <p className="text-base text-[color:var(--color-secondary)] leading-relaxed">
-                Before an agent can hold funds, receive a card or move money, Roving verifies who owns it, what it does, what tools it uses and what financial actions it is allowed to take.
-              </p>
-            </div>
-            <div className="bg-[color:var(--color-primary-fixed)] rounded-2xl p-5 flex flex-col gap-2">
-              <p className="text-sm font-semibold text-[color:var(--color-on-primary-fixed)]">Why it matters</p>
-              <p className="text-sm text-[color:var(--color-on-primary-fixed-variant)] leading-relaxed">
-                Roving KYA is not just identity verification. It is the trust layer that decides whether an agent is ready for financial access.
-              </p>
-            </div>
-            <a
-              href="#waitlist"
-              className="inline-flex self-start items-center gap-2 bg-[color:var(--color-primary)] text-white font-semibold px-6 py-3 rounded-full hover:bg-[color:var(--color-primary-container)] transition-colors"
-            >
-              Verify your first agent
-              <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-            </a>
-          </div>
+      <section className="pt-24 pb-56 bg-white">
+        <div className="px-12">
+          <h2
+            className="text-5xl font-extrabold text-[color:var(--color-on-surface)] mb-8"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            KYA — Know Your Agent
+          </h2>
 
-          {/* Right — check list */}
-          <div className="flex flex-col gap-4">
-            <p className="text-sm font-semibold text-[color:var(--color-secondary)] mb-2">What Roving KYA checks</p>
-            {kyaChecks.map((check) => (
-              <div key={check.label} className="bg-white rounded-xl p-4 flex items-start gap-4 card-shadow">
-                <span
-                  className="material-symbols-outlined text-[20px] mt-0.5 shrink-0"
-                  style={{ fontVariationSettings: "'FILL' 1", color: "#003ec7" }}
+          <div className="grid gap-6" style={{ gridTemplateColumns: "1fr 1fr 25%", height: "640px" }}>
+
+            {/* Left col: top 33% text / bottom 66% magnifying image */}
+            <div className="flex flex-col gap-4 h-full">
+              {/* Top ~33%: text */}
+              <div className="flex flex-col gap-4 rounded-3xl p-6" style={{ flex: "0 0 calc(33% - 8px)", backgroundColor: "#F8F3F0" }}>
+                <span className="text-sm font-semibold text-[color:var(--color-primary)] uppercase tracking-widest">KYA — Know Your Agent</span>
+                <h2
+                  className="text-2xl font-extrabold text-[color:var(--color-on-surface)] leading-tight"
+                  style={{ fontFamily: "var(--font-display)" }}
                 >
-                  verified
-                </span>
-                <div>
-                  <p className="text-sm font-semibold text-[color:var(--color-on-surface)]">{check.label}</p>
-                  <p className="text-sm text-[color:var(--color-secondary)] mt-0.5">{check.detail}</p>
-                </div>
+                  Give your AI agent a verified financial identity.
+                </h2>
+                <p className="text-sm text-[color:var(--color-secondary)] leading-relaxed">
+                  Before an agent can hold funds, receive a card or move money, Roving verifies who owns it, what it does, what tools it uses and what financial actions it is allowed to take.
+                </p>
               </div>
-            ))}
+
+              {/* Bottom ~66%: magnifying glass */}
+              <div
+                className="rounded-3xl flex-1 relative overflow-hidden flex items-center justify-center"
+                style={{ backgroundColor: "#2590EA26" }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/mangifying.png"
+                  alt=""
+                  className="w-[68%] h-auto object-contain drop-shadow-lg"
+                />
+              </div>
+            </div>
+
+            {/* Middle col: check list */}
+            <div className="rounded-3xl h-full relative overflow-hidden flex flex-col justify-start px-8 pt-8 pb-8" style={{ backgroundColor: "#F8F3F0" }}>
+              {/* Blurry coin backgrounds */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/coin.png" alt="" className="absolute pointer-events-none select-none" style={{ width: "200px", bottom: "-8%", right: "-10%", opacity: 0.35, filter: "blur(16px)", transform: "rotate(20deg)" }} />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/coin.png" alt="" className="absolute pointer-events-none select-none" style={{ width: "150px", top: "5%", right: "5%", opacity: 0.25, filter: "blur(14px)", transform: "rotate(-30deg)" }} />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/coin.png" alt="" className="absolute pointer-events-none select-none" style={{ width: "120px", top: "40%", left: "-5%", opacity: 0.2, filter: "blur(12px)", transform: "rotate(10deg)" }} />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/coin.png" alt="" className="absolute pointer-events-none select-none" style={{ width: "130px", bottom: "30%", right: "8%", opacity: 0.18, filter: "blur(15px)", transform: "rotate(-15deg)" }} />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/coin.png" alt="" className="absolute pointer-events-none select-none" style={{ width: "100px", top: "20%", left: "20%", opacity: 0.15, filter: "blur(10px)", transform: "rotate(45deg)" }} />
+              <p className="text-xl font-bold text-[color:var(--color-on-surface)] mb-5 relative z-10">What Roving KYA checks</p>
+              <div className="flex flex-col relative z-10">
+                {kyaChecks.map((check, i) => (
+                  <div
+                    key={check.label}
+                    className="py-3 flex flex-col gap-0.5"
+                    style={{ borderBottom: i < kyaChecks.length - 1 ? "1px solid rgba(0,0,0,0.08)" : "none" }}
+                  >
+                    <p className="text-sm font-semibold text-[color:var(--color-on-surface)]">{check.label}</p>
+                    <p className="text-sm text-[color:var(--color-secondary)] leading-relaxed">{check.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right col: single panel — phone top, text bottom */}
+            <div
+              className="rounded-3xl h-full relative overflow-hidden flex flex-col justify-end p-8"
+              style={{ backgroundColor: "#2590EA26" }}
+            >
+              {/* Sideways phone — top of container */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/sideways-phone.png"
+                alt="Roving app"
+                className="absolute top-0 left-1/2 -translate-x-1/2 w-[140%] h-auto object-contain drop-shadow-xl z-0"
+              />
+
+              {/* Text — bottom left */}
+              <div className="relative z-10 flex flex-col gap-4 mb-20">
+                <p className="text-2xl font-bold text-[color:var(--color-on-surface)]">Why it matters</p>
+                <p className="text-base text-[color:var(--color-secondary)] leading-relaxed">
+                  Roving KYA is not just identity verification. It is the trust layer that decides whether an agent is ready for financial access.
+                </p>
+                <a
+                  href="#waitlist"
+                  className="inline-flex self-start items-center gap-1 text-base font-semibold text-[color:var(--color-primary)] hover:gap-2 transition-all"
+                >
+                  Verify your first agent
+                  <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
