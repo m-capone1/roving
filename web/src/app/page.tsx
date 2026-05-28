@@ -863,7 +863,7 @@ export default function HomePage() {
 
       {/* ── NUMBERED FEATURES ─────────────────────────────────────────────── */}
       <section className="pb-24 pt-12 bg-white">
-        <div className="max-w-[1200px] mx-auto px-6">
+        <div className="px-12">
           <div className="grid grid-cols-3 gap-x-4 gap-y-10">
             {apiFeatures.map((feat, i) => (
               <div
