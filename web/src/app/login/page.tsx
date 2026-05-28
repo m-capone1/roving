@@ -1,6 +1,7 @@
 'use client'
 import { useActionState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { loginAction } from './actions'
 
 export default function LoginPage() {
@@ -10,10 +11,10 @@ export default function LoginPage() {
     <div className="min-h-screen bg-[color:var(--color-background)] flex items-center justify-center px-4">
       <div className="w-full max-w-sm">
         {/* Logo */}
-        <div className="flex items-center gap-2.5 justify-center mb-8">
+        <Link href="/" className="flex items-center gap-2.5 justify-center mb-8">
           <Image src="/logo-symbol.png" alt="Roving" width={36} height={36} className="w-9 h-9 object-contain" />
           <Image src="/roving-logo.png" alt="Roving" width={110} height={30} className="h-8 w-auto object-contain translate-y-1" />
-        </div>
+        </Link>
 
         <div className="bg-white rounded-2xl p-8 shadow-sm border border-[color:var(--color-outline-variant)]">
           <h1
