@@ -239,7 +239,7 @@ export default function HomePage() {
           {/* Right: hidden on mobile, overlapping layout on desktop */}
           <div className="hidden md:block relative min-h-[400px]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <img loading="lazy"
               src="/cell-phone.png"
               alt="Roving app on mobile"
               className="absolute right-0 bottom-0 w-[70%] h-auto drop-shadow-2xl z-0"
@@ -272,16 +272,16 @@ export default function HomePage() {
             >
               {/* Coins behind the phone */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/coin.png" alt="" className="absolute w-24 h-auto z-0" style={{ top: "8%", left: "-6%", transform: "rotate(20deg)" }} />
+              <img loading="lazy" src="/coin.png" alt="" className="absolute w-24 h-auto z-0" style={{ top: "8%", left: "-6%", transform: "rotate(20deg)" }} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/coin.png" alt="" className="absolute w-20 h-auto z-0" style={{ top: "32%", right: "-4%", transform: "rotate(-15deg)" }} />
+              <img loading="lazy" src="/coin.png" alt="" className="absolute w-20 h-auto z-0" style={{ top: "32%", right: "-4%", transform: "rotate(-15deg)" }} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/coin.png" alt="" className="absolute w-28 h-auto z-0" style={{ top: "55%", left: "-8%", transform: "rotate(35deg)" }} />
+              <img loading="lazy" src="/coin.png" alt="" className="absolute w-28 h-auto z-0" style={{ top: "55%", left: "-8%", transform: "rotate(35deg)" }} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/coin.png" alt="" className="absolute w-20 h-auto z-0" style={{ bottom: "10%", right: "-5%", transform: "rotate(-30deg)" }} />
+              <img loading="lazy" src="/coin.png" alt="" className="absolute w-20 h-auto z-0" style={{ bottom: "10%", right: "-5%", transform: "rotate(-30deg)" }} />
               {/* Phone on top */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <img loading="lazy"
                 src="/cell-phone-3.png"
                 alt="Roving accounts"
                 className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-auto object-contain drop-shadow-xl z-10"
@@ -325,7 +325,7 @@ export default function HomePage() {
                 style={{ backgroundColor: "#F8F3F0" }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <img loading="lazy"
                   src="/girl-smile.png"
                   alt=""
                   className="absolute inset-0 w-full h-full object-cover object-center"
@@ -339,7 +339,7 @@ export default function HomePage() {
               style={{ backgroundColor: "#F8F3F0" }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <img loading="lazy"
                 src="/cell-phone-2.png"
                 alt="Roving app"
                 className="w-[80%] h-auto object-contain object-bottom drop-shadow-xl"
@@ -382,13 +382,13 @@ export default function HomePage() {
             {/* Right: phone + orbiting company logos */}
             <div className="hidden md:block relative min-h-[420px]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <img loading="lazy"
                 src="/semi-circle-companies.png"
                 alt=""
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[75%] w-[70%] h-auto"
               />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <img loading="lazy"
                 src="/cell-phone-4.png"
                 alt="Roving virtual cards on mobile"
                 className="absolute left-1/2 -translate-x-1/2 w-[31%] h-auto drop-shadow-2xl z-10" style={{ bottom: "3%" }}
@@ -431,7 +431,7 @@ export default function HomePage() {
             {/* Right: robot illustration */}
             <div className="hidden md:flex items-center justify-center relative p-8">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <img loading="lazy"
                 src="/robot-gemini-img.png"
                 alt="Secure agent payments illustration"
                 className="w-[85%] h-auto object-contain drop-shadow-xl"
@@ -487,7 +487,7 @@ export default function HomePage() {
 
               {/* Girl photo */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <img loading="lazy"
                 src="/girl-phone.png"
                 alt=""
                 className="hidden lg:block absolute bottom-0 right-10 h-[82%] w-auto object-contain object-bottom drop-shadow-lg"
@@ -497,7 +497,7 @@ export default function HomePage() {
             {/* Right 1fr card */}
             <div className="rounded-3xl overflow-hidden relative" style={{ backgroundColor: "#F8F3F0" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <img loading="lazy"
                 src="/phone-5.png"
                 alt="Roving app"
                 className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[70%] h-auto object-contain drop-shadow-xl"
@@ -528,7 +528,7 @@ export default function HomePage() {
             {/* Background: clipped within card bounds despite outer overflow-visible */}
             <div className="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/gemini-1.png" alt="" className="hidden md:block absolute right-[-8%] top-0 h-[130%] w-auto object-contain opacity-5" />
+              <img loading="lazy" src="/gemini-1.png" alt="" className="hidden md:block absolute right-[-8%] top-0 h-[130%] w-auto object-contain opacity-5" />
             </div>
             <div className="flex flex-col gap-5 p-10 py-12 relative z-10">
               <h3
@@ -546,7 +546,7 @@ export default function HomePage() {
             </div>
             <div className="flex items-end justify-center h-full px-8">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/gemini-1.png" alt="" className="w-3/4 object-contain drop-shadow-2xl" style={{ transform: "translateY(-5%)" }} />
+              <img loading="lazy" src="/gemini-1.png" alt="" className="w-3/4 object-contain drop-shadow-2xl" style={{ transform: "translateY(-5%)" }} />
             </div>
           </div>
 
@@ -561,7 +561,7 @@ export default function HomePage() {
               </div>
               <div className="flex items-center justify-center px-4 py-4 h-96">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/gemini-2.png" alt="" className="h-full w-auto object-contain drop-shadow-md" />
+                <img loading="lazy" src="/gemini-2.png" alt="" className="h-full w-auto object-contain drop-shadow-md" />
               </div>
               <div className="px-6 pb-6">
                 <a href="#waitlist" className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all">
@@ -578,7 +578,7 @@ export default function HomePage() {
               </div>
               <div className="flex items-center justify-center px-4 py-4 h-96">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/gemini-3.png" alt="" className="h-full w-auto object-contain drop-shadow-md scale-125" />
+                <img loading="lazy" src="/gemini-3.png" alt="" className="h-full w-auto object-contain drop-shadow-md scale-125" />
               </div>
               <div className="px-6 pb-6">
                 <a href="#waitlist" className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all">
@@ -590,7 +590,7 @@ export default function HomePage() {
             {/* Travel & Booking — full width, text left / image right */}
             <div className="col-span-2 rounded-3xl overflow-hidden grid md:grid-cols-2 items-center relative" style={{ backgroundColor: "#F2F2F7", minHeight: "280px" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/world-background.png" alt="" className="hidden md:block absolute right-[-8%] top-[-35%] h-[150%] w-auto object-cover opacity-5 pointer-events-none" />
+              <img loading="lazy" src="/world-background.png" alt="" className="hidden md:block absolute right-[-8%] top-[-35%] h-[150%] w-auto object-cover opacity-5 pointer-events-none" />
               <div className="flex flex-col gap-3 p-10 relative z-10">
                 <h3 className="text-2xl lg:text-3xl font-extrabold leading-tight text-[color:var(--color-on-surface)]" style={{ fontFamily: "var(--font-display)" }}>Travel & Booking</h3>
                 <p className="text-sm text-[color:var(--color-secondary)] leading-relaxed">Roving helps travel agents securely book flights, hotels and transport within spending policies.</p>
@@ -600,7 +600,7 @@ export default function HomePage() {
               </div>
               <div className="flex items-center justify-center p-6 h-72 relative z-10">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/gemini-4.png" alt="" className="h-full w-auto object-contain drop-shadow-md" />
+                <img loading="lazy" src="/gemini-4.png" alt="" className="h-full w-auto object-contain drop-shadow-md" />
               </div>
             </div>
 
@@ -612,7 +612,7 @@ export default function HomePage() {
               </div>
               <div className="flex items-center justify-center px-4 py-4 h-96">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/gemini-5.png" alt="" className="h-full w-auto object-contain drop-shadow-md" />
+                <img loading="lazy" src="/gemini-5.png" alt="" className="h-full w-auto object-contain drop-shadow-md" />
               </div>
               <div className="px-6 pb-6">
                 <a href="#waitlist" className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all">
@@ -630,10 +630,10 @@ export default function HomePage() {
               </div>
               {/* Dashboard — lower left */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/gemini-7.png" alt="" className="absolute left-24 bottom-56 h-[35%] w-auto object-contain drop-shadow-md z-10" />
+              <img loading="lazy" src="/gemini-7.png" alt="" className="absolute left-24 bottom-56 h-[35%] w-auto object-contain drop-shadow-md z-10" />
               {/* Phone — right side, overflows bottom */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/gemini-6.png" alt="" className="absolute right-2 top-[32%] h-[130%] w-auto object-contain drop-shadow-md" />
+              <img loading="lazy" src="/gemini-6.png" alt="" className="absolute right-2 top-[32%] h-[130%] w-auto object-contain drop-shadow-md" />
               {/* Button */}
               <div className="absolute bottom-5 left-6 z-10">
                 <a href="#waitlist" className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all">
@@ -646,7 +646,7 @@ export default function HomePage() {
             <div className="col-span-2 rounded-3xl grid md:grid-cols-2 items-center relative overflow-hidden" style={{ backgroundColor: "#F2F2F7", minHeight: "280px" }}>
               {/* Background image flush right */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/robot-background.png" alt="" className="hidden md:block absolute right-[-67%] top-[-70%] h-[420%] w-auto object-cover opacity-10 pointer-events-none" />
+              <img loading="lazy" src="/robot-background.png" alt="" className="hidden md:block absolute right-[-67%] top-[-70%] h-[420%] w-auto object-cover opacity-10 pointer-events-none" />
               <div className="flex flex-col gap-3 p-10 relative z-10">
                 <h3 className="text-2xl lg:text-3xl font-extrabold leading-tight text-[color:var(--color-on-surface)]" style={{ fontFamily: "var(--font-display)" }}>AI Commerce</h3>
                 <p className="text-sm text-[color:var(--color-secondary)] leading-relaxed">Roving helps autonomous systems transact safely across digital services, APIs and marketplaces.</p>
@@ -656,14 +656,14 @@ export default function HomePage() {
               </div>
               <div className="flex items-center justify-center h-64 relative z-10">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/gemini-8.png" alt="" className="w-3/5 object-contain drop-shadow-2xl scale-[1.16]" />
+                <img loading="lazy" src="/gemini-8.png" alt="" className="w-3/5 object-contain drop-shadow-2xl scale-[1.16]" />
               </div>
             </div>
 
             {/* Compliance & Audit — full width, text left / image right */}
             <div className="col-span-2 rounded-3xl grid md:grid-cols-2 items-center relative overflow-hidden" style={{ backgroundColor: "#F2F2F7", minHeight: "280px" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/world-background.png" alt="" className="hidden md:block absolute right-[-8%] top-[-35%] h-[150%] w-auto object-cover opacity-10 pointer-events-none" />
+              <img loading="lazy" src="/world-background.png" alt="" className="hidden md:block absolute right-[-8%] top-[-35%] h-[150%] w-auto object-cover opacity-10 pointer-events-none" />
               <div className="flex flex-col gap-3 p-10 relative z-10">
                 <h3 className="text-2xl lg:text-3xl font-extrabold leading-tight text-[color:var(--color-on-surface)]" style={{ fontFamily: "var(--font-display)" }}>Compliance & Audit</h3>
                 <p className="text-sm text-[color:var(--color-secondary)] leading-relaxed">Roving helps organizations track every request, approval and transaction with complete execution visibility.</p>
@@ -673,7 +673,7 @@ export default function HomePage() {
               </div>
               <div className="flex items-center justify-center h-64 relative z-10">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/gemini-9.png" alt="" className="w-3/5 object-contain drop-shadow-2xl" />
+                <img loading="lazy" src="/gemini-9.png" alt="" className="w-3/5 object-contain drop-shadow-2xl" />
               </div>
             </div>
 
@@ -720,7 +720,7 @@ export default function HomePage() {
             {/* Right: girl-bubbles photo */}
             <div className="rounded-3xl overflow-hidden h-[500px]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <img loading="lazy"
                 src="/girl-bubbles.jpg"
                 alt="Person smiling while using their phone"
                 className="w-full h-full object-cover object-center"
@@ -750,7 +750,7 @@ export default function HomePage() {
                 </p>
               </div>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <img loading="lazy"
                 src="/computer-guy.jpg"
                 alt="Developer working on a laptop"
                 className="w-full object-cover flex-1"
@@ -834,7 +834,7 @@ export default function HomePage() {
                 style={{ backgroundColor: "#2590EA26" }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <img loading="lazy"
                   src="/mangifying.png"
                   alt=""
                   className="w-[68%] h-auto object-contain drop-shadow-lg"
@@ -846,15 +846,15 @@ export default function HomePage() {
             <div className="rounded-3xl h-full relative overflow-hidden flex flex-col justify-start px-5 pt-5 pb-5 md:px-8 md:pt-8 md:pb-8" style={{ backgroundColor: "#F8F3F0" }}>
               {/* Blurry coin backgrounds */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/coin.png" alt="" className="absolute pointer-events-none select-none" style={{ width: "200px", bottom: "-8%", right: "-10%", opacity: 0.35, filter: "blur(16px)", transform: "rotate(20deg)" }} />
+              <img loading="lazy" src="/coin.png" alt="" className="absolute pointer-events-none select-none" style={{ width: "200px", bottom: "-8%", right: "-10%", opacity: 0.35, filter: "blur(16px)", transform: "rotate(20deg)" }} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/coin.png" alt="" className="absolute pointer-events-none select-none" style={{ width: "150px", top: "5%", right: "5%", opacity: 0.25, filter: "blur(14px)", transform: "rotate(-30deg)" }} />
+              <img loading="lazy" src="/coin.png" alt="" className="absolute pointer-events-none select-none" style={{ width: "150px", top: "5%", right: "5%", opacity: 0.25, filter: "blur(14px)", transform: "rotate(-30deg)" }} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/coin.png" alt="" className="absolute pointer-events-none select-none" style={{ width: "120px", top: "40%", left: "-5%", opacity: 0.2, filter: "blur(12px)", transform: "rotate(10deg)" }} />
+              <img loading="lazy" src="/coin.png" alt="" className="absolute pointer-events-none select-none" style={{ width: "120px", top: "40%", left: "-5%", opacity: 0.2, filter: "blur(12px)", transform: "rotate(10deg)" }} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/coin.png" alt="" className="absolute pointer-events-none select-none" style={{ width: "130px", bottom: "30%", right: "8%", opacity: 0.18, filter: "blur(15px)", transform: "rotate(-15deg)" }} />
+              <img loading="lazy" src="/coin.png" alt="" className="absolute pointer-events-none select-none" style={{ width: "130px", bottom: "30%", right: "8%", opacity: 0.18, filter: "blur(15px)", transform: "rotate(-15deg)" }} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/coin.png" alt="" className="absolute pointer-events-none select-none" style={{ width: "100px", top: "20%", left: "20%", opacity: 0.15, filter: "blur(10px)", transform: "rotate(45deg)" }} />
+              <img loading="lazy" src="/coin.png" alt="" className="absolute pointer-events-none select-none" style={{ width: "100px", top: "20%", left: "20%", opacity: 0.15, filter: "blur(10px)", transform: "rotate(45deg)" }} />
               <p className="text-sm lg:text-xl font-bold text-[color:var(--color-on-surface)] mb-2 lg:mb-5 relative z-10">What Roving KYA checks</p>
               <div className="flex flex-col relative z-10">
                 {kyaChecks.map((check, i) => (
@@ -877,7 +877,7 @@ export default function HomePage() {
             >
               {/* Sideways phone — top of container */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <img loading="lazy"
                 src="/sideways-phone.png"
                 alt="Roving app"
                 className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-[140%] h-auto object-contain drop-shadow-xl z-0"
@@ -921,7 +921,7 @@ export default function HomePage() {
 
           {/* Dashboard screenshot */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <img loading="lazy"
             src="/api-sandboz.png"
             alt="Roving API Sandbox dashboard"
             className="w-full rounded-3xl shadow-2xl shadow-black/20"
@@ -941,7 +941,7 @@ export default function HomePage() {
               >
                 {/* Image — overflows top of card by ~5% */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <img loading="lazy"
                   src={`/num-${i + 1}.png`}
                   alt=""
                   className="absolute w-[72%] h-auto object-contain pointer-events-none"
@@ -966,7 +966,7 @@ export default function HomePage() {
           </h2>
           <div className="relative rounded-3xl overflow-hidden">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <img loading="lazy"
               src="/founder-video.png"
               alt="Roving founder video"
               className="w-full h-auto object-cover"
@@ -1075,7 +1075,7 @@ export default function HomePage() {
 
             {/* Left: social icons */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <img loading="lazy"
               src="/social-media.png"
               alt="Social media links"
               className="w-4 shrink-0"

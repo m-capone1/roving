@@ -1,0 +1,61 @@
+# Roving
+
+> The neobank for AI agents and the agentic economy. Roving gives every AI agent a real bank account, virtual cards, spending rules, global payments, and a verified financial identity.
+
+Roving is built by Calen Financial Technologies Ltd, headquartered in London, UK.
+
+## What Roving does
+
+Roving provides financial infrastructure specifically designed for AI agents and the businesses that deploy them. It enables AI agents to hold funds, make payments, and operate financially — with human-controlled rules, approvals, and full audit trails at every step.
+
+## Core products
+
+- **Agent Bank Accounts** — Dedicated wallets, accounts and controls for AI agents operating across borders, platforms and payment rails.
+- **Virtual Cards** — Issue virtual cards per agent with spend limits, merchant restrictions, and real-time approval rules built in.
+- **Global Payments** — Let agents pay APIs, vendors and services internationally while owners control limits, rules and permissions.
+- **KYA (Know Your Agent)** — Identity verification layer for AI agents. Verifies ownership, purpose, connected tools, financial permissions, and risk profile before an agent is granted financial access.
+- **Phoebe AI** — Natural language interface for initiating payments and banking tasks via voice or text commands.
+- **API & Sandbox** — Full REST API with sandbox environment for developers to test agent payment flows before going live.
+
+## Key use cases
+
+- Agentic banking — giving AI agents accounts and cards with built-in controls
+- Invoice discovery, validation and payment automation
+- Subscription and SaaS payment management for AI workflows
+- Travel agent booking within spending policies
+- Procurement automation with human approval gates
+- Treasury and budget allocation across agents and currencies
+- AI commerce — autonomous systems transacting across APIs and marketplaces
+- Compliance and audit trail generation for every agent transaction
+
+## How Roving compares
+
+Unlike general payment processors or wallets, Roving is purpose-built for the agent layer:
+- Dedicated accounts, wallets and cards per individual agent (not shared balances)
+- Owner-defined approval rules enforced before money moves
+- Full execution trace for every transaction — not just payment status
+- KYA identity verification specific to AI agents
+- Personal, team and enterprise deployment modes
+- Multi-currency and multi-rail roadmap
+
+## Who it's for
+
+- AI startups building autonomous products
+- Agent builders and developers using OpenAI, Anthropic, LangChain, CrewAI, AutoGen or MCP-based stacks
+- Enterprises deploying AI agents for finance, procurement or operations
+- Finance teams managing agent-initiated spend
+- Developers building agentic workflows that require payments
+
+## Company
+
+- **Company**: Calen Financial Technologies Ltd
+- **Product**: Roving (roving.money)
+- **Location**: 71–75 Shelton Street, Covent Garden, London, WC2H 9JQ, United Kingdom
+- **Contact**: hello@roving.money
+- **Status**: Early access / waitlist
+
+## Key pages
+
+- Homepage: https://www.roving.money
+- KYA: https://www.roving.money/kya
+- Waitlist: https://www.roving.money/#waitlist
