@@ -125,13 +125,13 @@ export default function HomePage() {
       <section className="relative pt-24 overflow-hidden min-h-screen" style={{ background: "linear-gradient(to bottom, #ffffff 0%, #dde5ff 100%)" }}>
         <div className="max-w-[1200px] mx-auto px-6 w-full h-full min-h-screen grid md:grid-cols-2 gap-12">
           {/* Left copy — vertically centred */}
-          <div className="flex flex-col justify-center gap-8 z-10 py-24">
+          <div className="flex flex-col justify-center gap-8 z-10 py-16 sm:py-24">
             <div className="inline-flex self-start items-center gap-2 px-4 py-2 rounded-full text-sm text-[color:var(--color-primary)] font-medium" style={{ backgroundColor: "#014BAA26" }}>
               The Neo Bank for the Agentic Economy
             </div>
 
             <h1
-              className="text-5xl lg:text-7xl font-extrabold leading-[1.05] text-[color:var(--color-on-surface)]"
+              className="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-[1.05] text-[color:var(--color-on-surface)]"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Banking at the speed of{" "}
@@ -176,7 +176,7 @@ export default function HomePage() {
             alt="Vercel, Twilio, Stripe, OpenAI, Anthropic and more"
             width={1200}
             height={120}
-            className="w-full object-contain scale-125"
+            className="w-full object-contain sm:scale-125"
           />
         </div>
       </section>
@@ -206,9 +206,152 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── AGENT BANK ACCOUNTS ───────────────────────────────────────────── */}
+      <section className="py-24 bg-white">
+        <div className="max-w-[1200px] mx-auto px-6">
+        <div className="rounded-3xl grid md:grid-cols-2 items-stretch overflow-hidden" style={{ backgroundColor: "#F8F3F0", minHeight: "420px" }}>
+          {/* Left: copy — carries all the padding */}
+          <div className="flex flex-col gap-6 p-8 pt-10 md:p-12 md:py-16">
+            <span
+              className="inline-flex self-start items-center px-3 py-1.5 rounded-full text-xs font-semibold"
+              style={{ backgroundColor: "#EDE8E5", color: "#003ec7" }}
+            >
+              Agent Bank Accounts
+            </span>
+            <h2
+              className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-[color:var(--color-on-surface)]"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              Open a global account for your AI agent
+            </h2>
+            <p className="text-base text-[color:var(--color-secondary)] leading-relaxed max-w-md">
+              Create dedicated wallets, cards and controls for agents that need to operate across borders, platforms and payments.
+            </p>
+            <a
+              href="#waitlist"
+              className="inline-flex self-start items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all"
+            >
+              Get early access
+              <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </a>
+          </div>
+
+          {/* Right: hidden on mobile, overlapping layout on desktop */}
+          <div className="hidden md:block relative min-h-[400px]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/cell-phone.png"
+              alt="Roving app on mobile"
+              className="absolute right-0 bottom-0 w-[70%] h-auto drop-shadow-2xl z-0"
+            />
+            <div className="absolute -left-4 top-[68%] -translate-y-1/2 w-[37%] rounded-2xl overflow-hidden shadow-xl z-10">
+              <Image
+                src="/countries.png"
+                alt="Multi-currency accounts"
+                width={320}
+                height={420}
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
+        </div>
+        </div>
+      </section>
+
+      {/* ── GLOBAL PAYMENTS ───────────────────────────────────────────────── */}
+      <section className="py-6 bg-white">
+        <div className="px-2">
+          <div
+            className="grid gap-4"
+            style={{ gridTemplateColumns: "1fr 2fr 1fr", height: "600px" }}
+          >
+            {/* Left tall card — cell-phone-3 */}
+            <div
+              className="rounded-3xl overflow-hidden relative"
+              style={{ backgroundColor: "#F8F3F0" }}
+            >
+              {/* Coins behind the phone */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/coin.png" alt="" className="absolute w-24 h-auto z-0" style={{ top: "8%", left: "-6%", transform: "rotate(20deg)" }} />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/coin.png" alt="" className="absolute w-20 h-auto z-0" style={{ top: "32%", right: "-4%", transform: "rotate(-15deg)" }} />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/coin.png" alt="" className="absolute w-28 h-auto z-0" style={{ top: "55%", left: "-8%", transform: "rotate(35deg)" }} />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/coin.png" alt="" className="absolute w-20 h-auto z-0" style={{ bottom: "10%", right: "-5%", transform: "rotate(-30deg)" }} />
+              {/* Phone on top */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/cell-phone-3.png"
+                alt="Roving accounts"
+                className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-auto object-contain drop-shadow-xl z-10"
+              />
+            </div>
+
+            {/* Center — two horizontal cards stacked */}
+            <div className="flex flex-col gap-4">
+              {/* Top horizontal card — text */}
+              <div
+                className="rounded-3xl p-8 flex flex-col justify-center gap-4"
+                style={{ backgroundColor: "#F8F3F0", flex: "0 0 210px" }}
+              >
+                <span
+                  className="inline-flex self-start items-center px-3 py-1.5 rounded-full text-xs font-semibold"
+                  style={{ backgroundColor: "#EDE8E5", color: "#003ec7" }}
+                >
+                  Global Payments
+                </span>
+                <h2
+                  className="text-2xl lg:text-3xl font-extrabold leading-tight text-[color:var(--color-on-surface)]"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  Convert and move money for agent workflows
+                </h2>
+                <p className="text-sm text-[color:var(--color-secondary)] leading-relaxed">
+                  Let your agents pay APIs, vendors and services globally while you control limits, rules and permissions.
+                </p>
+                <a
+                  href="#waitlist"
+                  className="inline-flex self-start items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all"
+                >
+                  Get early access
+                  <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </a>
+              </div>
+
+              {/* Bottom horizontal card — girl-smile + coin */}
+              <div
+                className="rounded-3xl overflow-hidden relative flex-1"
+                style={{ backgroundColor: "#F8F3F0" }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/girl-smile.png"
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                />
+              </div>
+            </div>
+
+            {/* Right tall card — cell-phone-2 */}
+            <div
+              className="rounded-3xl overflow-hidden flex items-start justify-center"
+              style={{ backgroundColor: "#F8F3F0" }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/cell-phone-2.png"
+                alt="Roving app"
+                className="w-[80%] h-auto object-contain object-bottom drop-shadow-xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── FEATURES ──────────────────────────────────────────────────────── */}
       <section id="features" className="py-24">
-        <div className="max-w-[1200px] mx-auto px-6 flex flex-col gap-32">
+        <div className="max-w-[1200px] mx-auto px-6 flex flex-col gap-20 md:gap-32">
           {features.map((feat, i) => (
             <div
               key={feat.tag}
@@ -220,7 +363,7 @@ export default function HomePage() {
                   {feat.tag}
                 </span>
                 <h2
-                  className="text-3xl lg:text-4xl font-extrabold leading-snug text-[color:var(--color-on-surface)]"
+                  className="text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-snug text-[color:var(--color-on-surface)]"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   {feat.title}
@@ -238,7 +381,7 @@ export default function HomePage() {
               </div>
 
               {/* Visual */}
-              <div className={`h-[380px] rounded-3xl bg-gradient-to-br ${feat.color} flex items-center justify-center shadow-xl`}>
+              <div className={`h-[240px] sm:h-[380px] rounded-3xl bg-gradient-to-br ${feat.color} flex items-center justify-center shadow-xl`}>
                 <span
                   className="material-symbols-outlined text-white/30 text-[120px]"
                   style={{ fontVariationSettings: "'FILL' 1" }}
@@ -333,11 +476,11 @@ export default function HomePage() {
           <div className="rounded-2xl border border-[color:var(--color-outline-variant)] overflow-hidden">
             {/* Table header */}
             <div className="grid grid-cols-2 bg-[color:var(--color-surface-container-low)]">
-              <div className="px-6 py-4 border-r border-[color:var(--color-outline-variant)]">
-                <span className="text-sm font-bold text-[color:var(--color-primary)]">Roving advantages</span>
+              <div className="px-3 sm:px-6 py-4 border-r border-[color:var(--color-outline-variant)]">
+                <span className="text-xs sm:text-sm font-bold text-[color:var(--color-primary)]">Roving advantages</span>
               </div>
-              <div className="px-6 py-4">
-                <span className="text-sm font-bold text-[color:var(--color-secondary)]">Others</span>
+              <div className="px-3 sm:px-6 py-4">
+                <span className="text-xs sm:text-sm font-bold text-[color:var(--color-secondary)]">Others</span>
               </div>
             </div>
 
@@ -346,20 +489,20 @@ export default function HomePage() {
                 key={i}
                 className={`grid grid-cols-2 border-t border-[color:var(--color-outline-variant)] ${i % 2 === 0 ? "bg-white" : "bg-[color:var(--color-surface-container-lowest)]"}`}
               >
-                <div className="px-6 py-5 border-r border-[color:var(--color-outline-variant)] flex items-start gap-3">
+                <div className="px-3 sm:px-6 py-4 sm:py-5 border-r border-[color:var(--color-outline-variant)] flex items-start gap-2 sm:gap-3">
                   <span
-                    className="material-symbols-outlined text-[color:var(--color-tertiary-container)] mt-0.5 shrink-0 text-[20px]"
+                    className="material-symbols-outlined text-[color:var(--color-tertiary-container)] mt-0.5 shrink-0 text-[18px] sm:text-[20px]"
                     style={{ fontVariationSettings: "'FILL' 1", color: "#007550" }}
                   >
                     check_circle
                   </span>
-                  <span className="text-sm text-[color:var(--color-on-surface)] font-medium">{row.roving}</span>
+                  <span className="text-xs sm:text-sm text-[color:var(--color-on-surface)] font-medium">{row.roving}</span>
                 </div>
-                <div className="px-6 py-5 flex items-start gap-3">
-                  <span className="material-symbols-outlined text-[color:var(--color-outline)] mt-0.5 shrink-0 text-[20px]">
+                <div className="px-3 sm:px-6 py-4 sm:py-5 flex items-start gap-2 sm:gap-3">
+                  <span className="material-symbols-outlined text-[color:var(--color-outline)] mt-0.5 shrink-0 text-[18px] sm:text-[20px]">
                     remove
                   </span>
-                  <span className="text-sm text-[color:var(--color-secondary)]">{row.others}</span>
+                  <span className="text-xs sm:text-sm text-[color:var(--color-secondary)]">{row.others}</span>
                 </div>
               </div>
             ))}
@@ -369,7 +512,7 @@ export default function HomePage() {
 
       {/* ── KYA ───────────────────────────────────────────────────────────── */}
       <section className="py-24 bg-[color:var(--color-surface-container-low)]">
-        <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
+        <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-10 md:gap-16 items-start">
           {/* Left */}
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-4">
@@ -455,7 +598,7 @@ export default function HomePage() {
         <div className="max-w-[900px] mx-auto px-6 flex flex-col gap-12">
           <div className="flex flex-col gap-4">
             <h2
-              className="text-4xl lg:text-5xl font-extrabold text-[color:var(--color-on-surface)] leading-tight"
+              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[color:var(--color-on-surface)] leading-tight"
               style={{ fontFamily: "var(--font-display)" }}
             >
               The #1 neo bank for humans and their AI agents
@@ -468,7 +611,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="bg-white rounded-3xl p-8 card-shadow border border-[color:var(--color-outline-variant)]/50">
+          <div className="bg-white rounded-3xl p-5 sm:p-8 card-shadow border border-[color:var(--color-outline-variant)]/50">
             <WaitlistForm />
           </div>
         </div>

@@ -56,7 +56,7 @@ export default function Navbar() {
           </Link>
           <a
             href="#waitlist"
-            className="bg-[color:var(--color-primary)] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-[color:var(--color-primary-container)] transition-colors"
+            className="hidden sm:inline-flex bg-[color:var(--color-primary)] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-[color:var(--color-primary-container)] transition-colors"
           >
             Get early access
           </a>
@@ -87,6 +87,13 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+          <a
+            href="#waitlist"
+            className="mt-2 w-full text-center bg-[color:var(--color-primary)] text-white text-sm font-semibold px-5 py-3 rounded-full hover:bg-[color:var(--color-primary-container)] transition-colors"
+            onClick={() => setOpen(false)}
+          >
+            Get early access
+          </a>
         </div>
       )}
       </div>
