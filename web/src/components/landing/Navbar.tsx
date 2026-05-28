@@ -50,7 +50,7 @@ export default function Navbar() {
         {/* Right actions */}
         <div className="flex items-center gap-3">
           <Link
-            href="/dashboard"
+            href="/login"
             className="hidden sm:block text-sm font-medium text-[color:var(--color-secondary)] hover:text-[color:var(--color-on-surface)] transition-colors"
           >
             Sign in
