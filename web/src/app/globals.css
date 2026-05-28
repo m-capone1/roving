@@ -69,7 +69,7 @@ button, [role="button"], a {
   --color-outline-variant: #c3c5d9;
 
   /* Typography */
-  --font-sans: "Outfit", -apple-system, sans-serif;
+  --font-sans: var(--font-outfit, "Outfit"), -apple-system, sans-serif;
   --font-display: "Satoshi", sans-serif;
 
   /* Border radius */
