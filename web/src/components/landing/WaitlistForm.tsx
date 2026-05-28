@@ -40,9 +40,9 @@ export default function WaitlistForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+    <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-5">
       <div className="flex flex-col gap-2">
-        <label className="text-sm font-semibold text-[color:var(--color-on-surface-variant)]">Full Name:</label>
+        <label className="text-sm text-white">Full Name:</label>
         <input
           name="name"
           type="text"
@@ -55,7 +55,7 @@ export default function WaitlistForm() {
       </div>
 
       <div className="flex flex-col gap-2">
-        <label className="text-sm font-semibold text-[color:var(--color-on-surface-variant)]">Email Address:</label>
+        <label className="text-sm text-white">Email Address:</label>
         <input
           name="email"
           type="email"
@@ -68,7 +68,7 @@ export default function WaitlistForm() {
       </div>
 
       <div className="flex flex-col gap-2">
-        <label className="text-sm font-semibold text-[color:var(--color-on-surface-variant)]">Company / Project name:</label>
+        <label className="text-sm text-white">Company / Project name:</label>
         <input
           name="company"
           type="text"
@@ -80,7 +80,7 @@ export default function WaitlistForm() {
       </div>
 
       <div className="flex flex-col gap-2">
-        <label className="text-sm font-semibold text-[color:var(--color-on-surface-variant)]">Role:</label>
+        <label className="text-sm text-white">Role:</label>
         <input
           name="role"
           type="text"
@@ -91,8 +91,8 @@ export default function WaitlistForm() {
         />
       </div>
 
-      <div className="sm:col-span-2 flex flex-col gap-2">
-        <label className="text-sm font-semibold text-[color:var(--color-on-surface-variant)]">What are you building with AI?</label>
+      <div className="flex flex-col gap-2">
+        <label className="text-sm text-white">What are you building with AI?</label>
         <textarea
           name="building"
           rows={3}
@@ -103,12 +103,13 @@ export default function WaitlistForm() {
         />
       </div>
 
-      <div className="sm:col-span-2">
+      <div>
         <button
           type="submit"
-          className="w-full bg-[color:var(--color-primary)] text-white font-semibold py-4 rounded-xl hover:bg-[color:var(--color-primary-container)] transition-colors text-base"
+          className="w-full text-white font-semibold py-4 rounded-xl transition-colors text-base"
+          style={{ backgroundColor: "#014BAA" }}
         >
-          Get early access
+          Join the network
         </button>
       </div>
     </form>

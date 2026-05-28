@@ -864,12 +864,12 @@ export default function HomePage() {
       {/* ── NUMBERED FEATURES ─────────────────────────────────────────────── */}
       <section className="pb-24 pt-12 bg-white">
         <div className="px-12">
-          <div className="grid grid-cols-3 gap-x-4 gap-y-10">
+          <div className="grid grid-cols-3 gap-x-4 gap-y-16">
             {apiFeatures.map((feat, i) => (
               <div
                 key={feat.num}
                 className="rounded-2xl relative flex flex-col px-6 pb-6"
-                style={{ backgroundColor: "#161b27", paddingTop: "calc(60% + 16px)", overflow: "visible" }}
+                style={{ backgroundColor: "#161b27", paddingTop: "calc(52% + 16px)", overflow: "visible" }}
               >
                 {/* Image — overflows top of card by ~5% */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -880,87 +880,162 @@ export default function HomePage() {
                   style={{ top: 0, left: "50%", transform: "translate(-50%, -20%)" }}
                 />
                 <p className="text-sm text-white/70 mb-3 font-medium">{feat.num} — {feat.title}</p>
-                <h3 className="text-lg font-bold text-white mb-2" style={{ fontFamily: "var(--font-display)" }}>{feat.title}</h3>
-                <p className="text-base text-white/60 leading-relaxed">{feat.body}</p>
+                <p className="text-lg text-white leading-relaxed">{feat.body}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FOUNDER VIDEO ────────────────────────────────────────────────── */}
+      <section className="py-24 bg-white">
+        <div className="max-w-[1200px] mx-auto px-6 flex flex-col gap-10">
+          <h2
+            className="text-3xl sm:text-4xl font-extrabold text-[color:var(--color-on-surface)] leading-tight text-center whitespace-nowrap"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            The #1 neo bank for humans and their AI agents
+          </h2>
+          <div className="relative rounded-3xl overflow-hidden">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/founder-video.png"
+              alt="Roving founder video"
+              className="w-full h-auto object-cover"
+            />
           </div>
         </div>
       </section>
 
       {/* ── WAITLIST ──────────────────────────────────────────────────────── */}
-      <section id="waitlist" className="py-24 bg-[color:var(--color-surface-container-low)]">
-        <div className="max-w-[900px] mx-auto px-6 flex flex-col gap-12">
-          <div className="flex flex-col gap-4">
-            <h2
-              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[color:var(--color-on-surface)] leading-tight"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              The #1 neo bank for humans and their AI agents
-            </h2>
-            <h3 className="text-xl font-bold text-[color:var(--color-primary)]">
-              Join the cool kids network
-            </h3>
-            <p className="text-base text-[color:var(--color-secondary)] leading-relaxed max-w-xl">
-              Get a front-row seat to the future of agentic finance. Product drops, early demos, founder notes, community updates and sharp ideas before everyone else catches up.
-            </p>
-          </div>
+      <section id="waitlist" className="py-24" style={{ backgroundColor: "#020D1C" }}>
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
 
-          <div className="bg-white rounded-3xl p-5 sm:p-8 card-shadow border border-[color:var(--color-outline-variant)]/50">
-            <WaitlistForm />
+            {/* Left: copy */}
+            <div className="flex flex-col gap-10 pr-20">
+              <h2
+                className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white leading-tight"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                Join the cool kids network
+              </h2>
+              <div className="flex flex-col gap-6 text-lg text-white leading-relaxed">
+                <p>Get a front-row seat to the future of agentic finance.</p>
+                <p>Product drops, early demos, founder notes, community updates and sharp ideas before everyone else catches up.</p>
+                <p>Don&apos;t forget your popcorn 🍿</p>
+              </div>
+            </div>
+
+            {/* Right: form */}
+            <div className="rounded-3xl p-6 sm:p-8" style={{ backgroundColor: "#252E3A99" }}>
+              <WaitlistForm />
+            </div>
+
           </div>
         </div>
       </section>
 
       {/* ── FOOTER ────────────────────────────────────────────────────────── */}
-      <footer className="bg-[color:var(--color-inverse-surface)] text-[color:var(--color-inverse-on-surface)]">
+      <footer style={{ backgroundColor: "#020D1C" }} className="text-white">
         <div className="max-w-[1200px] mx-auto px-6 pt-16 pb-8 flex flex-col gap-16">
-          {/* Top: logo + columns */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-8">
-            {/* Brand */}
-            <div className="col-span-2 md:col-span-3 lg:col-span-1 flex flex-col gap-4">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-[color:var(--color-primary-container)] rounded-lg flex items-center justify-center">
-                  <span className="material-symbols-outlined text-white text-[18px]" style={{ fontVariationSettings: "'FILL' 1" }}>
-                    rocket_launch
-                  </span>
-                </div>
-                <span className="text-lg font-bold" style={{ fontFamily: "var(--font-display)" }}>Roving</span>
+
+          {/* Top border */}
+          <div className="border-t border-white/10" />
+
+          {/* 6 columns */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10">
+
+            {/* Products */}
+            <div className="flex flex-col gap-4">
+              <p className="text-xs font-bold uppercase tracking-widest text-white">Products</p>
+              {["Agent Accounts","Virtual Cards","Agent Wallets","Global Payments","Multi-Currency","Phoebe AI","KYA","Approvals & Controls","API & SDKs"].map((link) => (
+                <a key={link} href="#" className="text-sm text-white/60 hover:text-white transition-colors">{link}</a>
+              ))}
+            </div>
+
+            {/* Developers */}
+            <div className="flex flex-col gap-4">
+              <p className="text-xs font-bold uppercase tracking-widest text-white">Developers</p>
+              {["API Docs","Sandbox","Webhooks","SDKs","Status","Changelog","Guides"].map((link) => (
+                <a key={link} href="#" className="text-sm text-white/60 hover:text-white transition-colors">{link}</a>
+              ))}
+            </div>
+
+            {/* Company */}
+            <div className="flex flex-col gap-4">
+              <p className="text-xs font-bold uppercase tracking-widest text-white">Company</p>
+              {["About","Careers","Blog","Press","Trust Center","Contact"].map((link) => (
+                <a key={link} href="#" className="text-sm text-white/60 hover:text-white transition-colors">{link}</a>
+              ))}
+            </div>
+
+            {/* Use Cases */}
+            <div className="flex flex-col gap-4">
+              <p className="text-xs font-bold uppercase tracking-widest text-white">Use Cases</p>
+              {["AI Startups","Agent Builders","Enterprises","Developers","Finance Teams","Operations Teams","Autonomous Commerce"].map((link) => (
+                <a key={link} href="#" className="text-sm text-white/60 hover:text-white transition-colors">{link}</a>
+              ))}
+            </div>
+
+            {/* Legal */}
+            <div className="flex flex-col gap-4">
+              <p className="text-xs font-bold uppercase tracking-widest text-white">Legal</p>
+              {["Privacy Policy","Terms","Acceptable Use","Cookie Policy","Risk Disclosure","Compliance"].map((link) => (
+                <a key={link} href="#" className="text-sm text-white/60 hover:text-white transition-colors">{link}</a>
+              ))}
+            </div>
+
+            {/* Contact */}
+            <div className="flex flex-col gap-4">
+              <p className="text-xs font-bold uppercase tracking-widest text-white">Contact</p>
+              <a href="mailto:hello@roving.money" className="text-sm text-[#4d9fff] hover:text-white transition-colors">hello@roving.money</a>
+              <p className="text-sm text-white/60">020 3307 6448</p>
+              <div className="flex flex-col gap-1 pt-2">
+                <p className="text-sm font-semibold text-white">Our London Office</p>
+                <p className="text-sm text-white/60">71–75 Shelton Street</p>
+                <p className="text-sm text-white/60">Covent Garden</p>
+                <p className="text-sm text-white/60">London, WC2H 9JQ</p>
+                <p className="text-sm text-white/60">United Kingdom</p>
               </div>
             </div>
 
-            {/* Footer columns */}
-            {footerCols.map((col) => (
-              <div key={col.heading} className="flex flex-col gap-3">
-                <p className="text-[11px] font-bold uppercase tracking-widest text-[color:var(--color-inverse-on-surface)]/50">
-                  {col.heading}
-                </p>
-                {col.links.map((link) => (
-                  <a
-                    key={link}
-                    href="#"
-                    className="text-sm text-[color:var(--color-inverse-on-surface)]/70 hover:text-[color:var(--color-inverse-on-surface)] transition-colors"
-                  >
-                    {link}
-                  </a>
-                ))}
-              </div>
-            ))}
           </div>
 
-          {/* Legal text */}
-          <div className="border-t border-white/10 pt-8 flex flex-col gap-4">
-            <p className="text-xs text-[color:var(--color-inverse-on-surface)]/50 leading-relaxed max-w-3xl">
-              Roving is a product of Calen Financial Technologies Ltd. Calen Financial Technologies is a financial technology company building AI-native financial infrastructure for businesses, developers and the emerging agentic economy. Roving is not yet a bank. We are building the banking experience for AI agents by working with licensed banking, card issuing, payment and regulated financial infrastructure partners where required. Services may vary by jurisdiction and are subject to eligibility, compliance checks and partner approval.
-            </p>
-            <p className="text-xs text-[color:var(--color-inverse-on-surface)]/40">
-              Built with love from London and San Francisco 💙
-            </p>
-            <p className="text-xs text-[color:var(--color-inverse-on-surface)]/40">
-              © 2026 Calen Financial Technologies Ltd. All rights reserved.
-            </p>
+          {/* Legal text + copyright */}
+          <div className="border-t border-white/10 pt-12 flex gap-16 items-start">
+
+            {/* Left: social icons */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/social-media.png"
+              alt="Social media links"
+              className="w-4 shrink-0"
+            />
+
+            {/* Right: legal copy */}
+            <div className="flex flex-col gap-6">
+              <p className="text-xs text-white leading-relaxed">
+                Roving is a product of Calen Financial Technologies Ltd. Calen Financial Technologies is a financial technology company building AI-native financial infrastructure for businesses, developers and the emerging agentic economy. Roving is not yet a bank. We are building the banking experience for AI agents by working with licensed banking, card issuing, payment and regulated financial infrastructure partners where required. Services may vary by jurisdiction and are subject to eligibility, compliance checks and partner approval.
+              </p>
+              <p className="text-xs text-white">Built with love from London and San Francisco 💙</p>
+              <p className="text-xs text-white">© 2026 Calen Financial Technologies Ltd. All rights reserved.</p>
+            </div>
+
           </div>
+
         </div>
+
+        {/* Big Roving wordmark */}
+        <div className="overflow-hidden flex justify-center">
+          <p
+            className="text-white font-extrabold leading-[140%] tracking-[0.04em] select-none"
+            style={{ fontFamily: "Sora, sans-serif", fontSize: "270px", fontWeight: 800 }}
+          >
+            Roving
+          </p>
+        </div>
+
       </footer>
     </div>
   );
