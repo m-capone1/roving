@@ -512,100 +512,168 @@ export default function HomePage() {
       <section id="use-cases" className="py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 flex flex-col gap-6">
 
-          {/* Agentic Banking — dark full-width featured card with illustration */}
-          <div
-            className="rounded-3xl overflow-hidden grid md:grid-cols-2 items-center"
-            style={{ background: "linear-gradient(135deg, #050d1f 0%, #001a6e 60%, #003ec7 100%)", minHeight: "300px" }}
+          {/* Section header */}
+          <h2
+            className="text-5xl lg:text-6xl font-bold leading-tight text-[color:var(--color-on-surface)] text-center"
+            style={{ fontFamily: "var(--font-display)" }}
           >
-            <div className="flex flex-col gap-5 p-10 py-12">
-              <span className="text-sm font-semibold uppercase tracking-widest" style={{ color: "#a8c0ff" }}>Use Cases</span>
-              <h2
-                className="text-2xl lg:text-3xl font-extrabold leading-tight text-white"
+            Use Cases
+          </h2>
+
+          {/* Agentic Banking — full-width, light bg, image overflows top */}
+          <div
+            className="rounded-3xl grid md:grid-cols-2 items-end relative"
+            style={{ backgroundColor: "#F2F2F7", minHeight: "280px", overflow: "visible" }}
+          >
+            {/* Background: clipped within card bounds despite outer overflow-visible */}
+            <div className="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/gemini-1.png" alt="" className="absolute right-[-8%] top-0 h-[130%] w-auto object-contain opacity-5" />
+            </div>
+            <div className="flex flex-col gap-5 p-10 py-12 relative z-10">
+              <h3
+                className="text-2xl lg:text-3xl font-extrabold leading-tight text-[color:var(--color-on-surface)]"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 Agentic Banking
-              </h2>
-              <p className="text-sm text-white/60 leading-relaxed">
+              </h3>
+              <p className="text-sm text-[color:var(--color-secondary)] leading-relaxed">
                 Roving helps businesses give AI agents accounts, wallets and cards with built-in controls and approvals.
               </p>
-              <a href="#waitlist" className="inline-flex self-start items-center gap-2 text-sm font-semibold text-white/80 hover:text-white hover:gap-3 transition-all">
+              <a href="#waitlist" className="inline-flex self-start items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all">
                 Get early access <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
               </a>
             </div>
-            <div className="flex items-center justify-center p-8 h-full">
+            <div className="flex items-end justify-center h-full px-8">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/gemini-1.png" alt="" className="w-full max-h-[260px] object-contain drop-shadow-2xl" />
+              <img src="/gemini-1.png" alt="" className="w-3/4 object-contain drop-shadow-2xl" style={{ transform: "translateY(-5%)" }} />
             </div>
           </div>
 
-          {/* 4×2 card grid */}
-          <div className="grid grid-cols-2 gap-4">
+          {/* card grid */}
+          <div className="grid grid-cols-2 gap-x-4 gap-y-10">
 
-            {[
-              { title: "Invoice Payments",        body: "Roving helps teams automate invoice discovery, validation and payment through AI-driven workflows.", img: "/gemini-2.png" },
-              { title: "Subscription Management", body: "Roving helps agents manage recurring SaaS, API and infrastructure payments without manual operations.", img: "/gemini-3.png" },
-              { title: "Travel & Booking",        body: "Roving helps travel agents securely book flights, hotels and transport within spending policies.", img: "/gemini-4.png" },
-              { title: "Procurement Operations",  body: "Roving helps businesses automate purchasing workflows while keeping humans in control of approvals and limits.", img: "/gemini-5.png" },
-            ].map((uc) => (
-              <div key={uc.title} className="rounded-3xl overflow-hidden flex flex-col" style={{ backgroundColor: "#F8F3F0" }}>
-                <div className="flex items-center justify-center p-6 pt-8 h-56">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={uc.img} alt="" className="h-full w-auto object-contain drop-shadow-md" />
-                </div>
-                <div className="flex flex-col gap-3 p-6 pt-2">
-                  <h3 className="font-bold text-[color:var(--color-on-surface)] text-lg" style={{ fontFamily: "var(--font-display)" }}>{uc.title}</h3>
-                  <p className="text-sm text-[color:var(--color-secondary)] leading-relaxed">{uc.body}</p>
-                  <a href="#waitlist" className="inline-flex items-center gap-1 text-xs font-semibold text-[color:var(--color-primary)] mt-1 hover:gap-2 transition-all">
-                    Get early access <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
-                  </a>
-                </div>
+            {/* Invoice Payments — half width */}
+            <div className="rounded-3xl overflow-hidden flex flex-col" style={{ backgroundColor: "#F2F2F7" }}>
+              <div className="flex flex-col gap-2 p-6 pb-0">
+                <h3 className="text-2xl lg:text-3xl font-extrabold leading-tight text-[color:var(--color-on-surface)]" style={{ fontFamily: "var(--font-display)" }}>Invoice Payments</h3>
+                <p className="text-sm text-[color:var(--color-secondary)] leading-relaxed">Roving helps teams automate invoice discovery, validation and payment through AI-driven workflows.</p>
               </div>
-            ))}
+              <div className="flex items-center justify-center px-4 py-4 h-96">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/gemini-2.png" alt="" className="h-full w-auto object-contain drop-shadow-md" />
+              </div>
+              <div className="px-6 pb-6">
+                <a href="#waitlist" className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all">
+                  Get early access <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </a>
+              </div>
+            </div>
 
-            {/* Treasury & Budgeting — gemini-6 + gemini-7 together */}
-            <div className="rounded-3xl overflow-hidden flex flex-col" style={{ backgroundColor: "#F8F3F0" }}>
-              <div className="flex items-center justify-center gap-2 p-6 pt-8 h-56">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/gemini-6.png" alt="" className="h-full w-auto object-contain drop-shadow-md" />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/gemini-7.png" alt="" className="h-[72%] w-auto object-contain drop-shadow-md" />
+            {/* Subscription Management — half width */}
+            <div className="rounded-3xl overflow-hidden flex flex-col" style={{ backgroundColor: "#F2F2F7" }}>
+              <div className="flex flex-col gap-2 p-6 pb-0">
+                <h3 className="text-2xl lg:text-3xl font-extrabold leading-tight text-[color:var(--color-on-surface)]" style={{ fontFamily: "var(--font-display)" }}>Subscription Management</h3>
+                <p className="text-sm text-[color:var(--color-secondary)] leading-relaxed">Roving helps agents manage recurring SaaS, API and infrastructure payments without manual operations.</p>
               </div>
-              <div className="flex flex-col gap-3 p-6 pt-2">
-                <h3 className="font-bold text-[color:var(--color-on-surface)] text-lg" style={{ fontFamily: "var(--font-display)" }}>Treasury & Budgeting</h3>
+              <div className="flex items-center justify-center px-4 py-4 h-96">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/gemini-3.png" alt="" className="h-full w-auto object-contain drop-shadow-md scale-125" />
+              </div>
+              <div className="px-6 pb-6">
+                <a href="#waitlist" className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all">
+                  Get early access <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Travel & Booking — full width, text left / image right */}
+            <div className="col-span-2 rounded-3xl overflow-hidden grid md:grid-cols-2 items-center relative" style={{ backgroundColor: "#F2F2F7", minHeight: "280px" }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/world-background.png" alt="" className="absolute right-[-8%] top-[-35%] h-[150%] w-auto object-cover opacity-5 pointer-events-none" />
+              <div className="flex flex-col gap-3 p-10 relative z-10">
+                <h3 className="text-2xl lg:text-3xl font-extrabold leading-tight text-[color:var(--color-on-surface)]" style={{ fontFamily: "var(--font-display)" }}>Travel & Booking</h3>
+                <p className="text-sm text-[color:var(--color-secondary)] leading-relaxed">Roving helps travel agents securely book flights, hotels and transport within spending policies.</p>
+                <a href="#waitlist" className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all">
+                  Get early access <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </a>
+              </div>
+              <div className="flex items-center justify-center p-6 h-72 relative z-10">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/gemini-4.png" alt="" className="h-full w-auto object-contain drop-shadow-md" />
+              </div>
+            </div>
+
+            {/* Procurement Operations — half width */}
+            <div className="rounded-3xl overflow-hidden flex flex-col" style={{ backgroundColor: "#F2F2F7" }}>
+              <div className="flex flex-col gap-2 p-6 pb-0">
+                <h3 className="text-2xl lg:text-3xl font-extrabold leading-tight text-[color:var(--color-on-surface)]" style={{ fontFamily: "var(--font-display)" }}>Procurement Operations</h3>
+                <p className="text-sm text-[color:var(--color-secondary)] leading-relaxed">Roving helps businesses automate purchasing workflows while keeping humans in control of approvals and limits.</p>
+              </div>
+              <div className="flex items-center justify-center px-4 py-4 h-96">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/gemini-5.png" alt="" className="h-full w-auto object-contain drop-shadow-md" />
+              </div>
+              <div className="px-6 pb-6">
+                <a href="#waitlist" className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all">
+                  Get early access <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Treasury & Budgeting — half width */}
+            <div className="rounded-3xl overflow-hidden relative" style={{ backgroundColor: "#F2F2F7", minHeight: "420px" }}>
+              {/* Text */}
+              <div className="flex flex-col gap-2 p-6">
+                <h3 className="text-2xl lg:text-3xl font-extrabold leading-tight text-[color:var(--color-on-surface)]" style={{ fontFamily: "var(--font-display)" }}>Treasury & Budgeting</h3>
                 <p className="text-sm text-[color:var(--color-secondary)] leading-relaxed">Roving helps companies allocate, monitor and control spending across agents, teams and currencies.</p>
-                <a href="#waitlist" className="inline-flex items-center gap-1 text-xs font-semibold text-[color:var(--color-primary)] mt-1 hover:gap-2 transition-all">
-                  Get early access <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+              </div>
+              {/* Dashboard — lower left */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/gemini-7.png" alt="" className="absolute left-24 bottom-56 h-[35%] w-auto object-contain drop-shadow-md z-10" />
+              {/* Phone — right side, overflows bottom */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/gemini-6.png" alt="" className="absolute right-2 top-[32%] h-[130%] w-auto object-contain drop-shadow-md" />
+              {/* Button */}
+              <div className="absolute bottom-5 left-6 z-10">
+                <a href="#waitlist" className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all">
+                  Get early access <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
                 </a>
               </div>
             </div>
 
-            {/* AI Commerce — gemini-8 */}
-            <div className="rounded-3xl overflow-hidden flex flex-col" style={{ backgroundColor: "#F8F3F0" }}>
-              <div className="flex items-center justify-center p-6 pt-8 h-56">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/gemini-8.png" alt="" className="h-full w-auto object-contain drop-shadow-md" />
-              </div>
-              <div className="flex flex-col gap-3 p-6 pt-2">
-                <h3 className="font-bold text-[color:var(--color-on-surface)] text-lg" style={{ fontFamily: "var(--font-display)" }}>AI Commerce</h3>
+            {/* AI Commerce — full width, text left / image right */}
+            <div className="col-span-2 rounded-3xl grid md:grid-cols-2 items-center relative overflow-hidden" style={{ backgroundColor: "#F2F2F7", minHeight: "280px" }}>
+              {/* Background image flush right */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/robot-background.png" alt="" className="absolute right-[-67%] top-[-70%] h-[420%] w-auto object-cover opacity-10 pointer-events-none" />
+              <div className="flex flex-col gap-3 p-10 relative z-10">
+                <h3 className="text-2xl lg:text-3xl font-extrabold leading-tight text-[color:var(--color-on-surface)]" style={{ fontFamily: "var(--font-display)" }}>AI Commerce</h3>
                 <p className="text-sm text-[color:var(--color-secondary)] leading-relaxed">Roving helps autonomous systems transact safely across digital services, APIs and marketplaces.</p>
-                <a href="#waitlist" className="inline-flex items-center gap-1 text-xs font-semibold text-[color:var(--color-primary)] mt-1 hover:gap-2 transition-all">
-                  Get early access <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+                <a href="#waitlist" className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all">
+                  Get early access <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
                 </a>
+              </div>
+              <div className="flex items-center justify-center h-64 relative z-10">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/gemini-8.png" alt="" className="w-3/5 object-contain drop-shadow-2xl scale-[1.16]" />
               </div>
             </div>
 
-            {/* Compliance & Audit — gemini-9 */}
-            <div className="rounded-3xl overflow-hidden flex flex-col" style={{ backgroundColor: "#F8F3F0" }}>
-              <div className="flex items-center justify-center p-6 pt-8 h-56">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/gemini-9.png" alt="" className="h-full w-auto object-contain drop-shadow-md" />
-              </div>
-              <div className="flex flex-col gap-3 p-6 pt-2">
-                <h3 className="font-bold text-[color:var(--color-on-surface)] text-lg" style={{ fontFamily: "var(--font-display)" }}>Compliance & Audit</h3>
+            {/* Compliance & Audit — full width, text left / image right */}
+            <div className="col-span-2 rounded-3xl grid md:grid-cols-2 items-center relative overflow-hidden" style={{ backgroundColor: "#F2F2F7", minHeight: "280px" }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/world-background.png" alt="" className="absolute right-[-8%] top-[-35%] h-[150%] w-auto object-cover opacity-10 pointer-events-none" />
+              <div className="flex flex-col gap-3 p-10 relative z-10">
+                <h3 className="text-2xl lg:text-3xl font-extrabold leading-tight text-[color:var(--color-on-surface)]" style={{ fontFamily: "var(--font-display)" }}>Compliance & Audit</h3>
                 <p className="text-sm text-[color:var(--color-secondary)] leading-relaxed">Roving helps organizations track every request, approval and transaction with complete execution visibility.</p>
-                <a href="#waitlist" className="inline-flex items-center gap-1 text-xs font-semibold text-[color:var(--color-primary)] mt-1 hover:gap-2 transition-all">
-                  Get early access <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+                <a href="#waitlist" className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all">
+                  Get early access <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
                 </a>
+              </div>
+              <div className="flex items-center justify-center h-64 relative z-10">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/gemini-9.png" alt="" className="w-3/5 object-contain drop-shadow-2xl" />
               </div>
             </div>
 
