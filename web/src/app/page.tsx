@@ -508,137 +508,196 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── FEATURES ──────────────────────────────────────────────────────── */}
-      <section id="features" className="py-24">
-        <div className="max-w-[1200px] mx-auto px-6 flex flex-col gap-20 md:gap-32">
-          {features.map((feat, i) => (
-            <div
-              key={feat.tag}
-              className={`grid md:grid-cols-2 gap-16 items-center ${i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""}`}
-            >
-              {/* Text */}
-              <div className="flex flex-col gap-6">
-                <span className="inline-flex self-start items-center gap-2 px-3 py-1.5 rounded-full bg-[color:var(--color-primary-fixed)] text-[color:var(--color-on-primary-fixed)] text-xs font-semibold">
-                  {feat.tag}
-                </span>
-                <h2
-                  className="text-2xl sm:text-3xl lg:text-4xl font-extrabold leading-snug text-[color:var(--color-on-surface)]"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
-                  {feat.title}
-                </h2>
-                <p className="text-base text-[color:var(--color-secondary)] leading-relaxed">
-                  {feat.body}
-                </p>
-                <a
-                  href="#waitlist"
-                  className="inline-flex self-start items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all"
-                >
-                  Get early access
-                  <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-                </a>
-              </div>
-
-              {/* Visual */}
-              <div className={`h-[240px] sm:h-[380px] rounded-3xl bg-gradient-to-br ${feat.color} flex items-center justify-center shadow-xl`}>
-                <span
-                  className="material-symbols-outlined text-white/30 text-[120px]"
-                  style={{ fontVariationSettings: "'FILL' 1" }}
-                >
-                  {feat.icon}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* ── USE CASES ─────────────────────────────────────────────────────── */}
-      <section id="use-cases" className="py-24 bg-[color:var(--color-surface-container-low)]">
-        <div className="max-w-[1200px] mx-auto px-6 flex flex-col gap-12">
-          <div className="flex flex-col gap-3">
-            <span className="text-sm font-semibold text-[color:var(--color-primary)] uppercase tracking-widest">Use Cases</span>
-            <h2
-              className="text-4xl font-extrabold text-[color:var(--color-on-surface)]"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              Agentic Banking
-            </h2>
+      <section id="use-cases" className="py-24 bg-white">
+        <div className="max-w-[1200px] mx-auto px-6 flex flex-col gap-6">
+
+          {/* Agentic Banking — dark full-width featured card with illustration */}
+          <div
+            className="rounded-3xl overflow-hidden grid md:grid-cols-2 items-center"
+            style={{ background: "linear-gradient(135deg, #050d1f 0%, #001a6e 60%, #003ec7 100%)", minHeight: "300px" }}
+          >
+            <div className="flex flex-col gap-5 p-10 py-12">
+              <span className="text-sm font-semibold uppercase tracking-widest" style={{ color: "#a8c0ff" }}>Use Cases</span>
+              <h2
+                className="text-2xl lg:text-3xl font-extrabold leading-tight text-white"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                Agentic Banking
+              </h2>
+              <p className="text-sm text-white/60 leading-relaxed">
+                Roving helps businesses give AI agents accounts, wallets and cards with built-in controls and approvals.
+              </p>
+              <a href="#waitlist" className="inline-flex self-start items-center gap-2 text-sm font-semibold text-white/80 hover:text-white hover:gap-3 transition-all">
+                Get early access <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </a>
+            </div>
+            <div className="flex items-center justify-center p-8 h-full">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/gemini-1.png" alt="" className="w-full max-h-[260px] object-contain drop-shadow-2xl" />
+            </div>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {useCases.map((uc) => (
-              <div key={uc.title} className="bg-white rounded-2xl p-6 flex flex-col gap-4 card-shadow hover:shadow-md transition-shadow group">
-                <div className="w-10 h-10 rounded-xl bg-[color:var(--color-primary-fixed)] flex items-center justify-center">
-                  <span
-                    className="material-symbols-outlined text-[color:var(--color-on-primary-fixed)] text-[22px]"
-                    style={{ fontVariationSettings: "'FILL' 1" }}
-                  >
-                    {uc.icon}
-                  </span>
+
+          {/* 4×2 card grid */}
+          <div className="grid grid-cols-2 gap-4">
+
+            {[
+              { title: "Invoice Payments",        body: "Roving helps teams automate invoice discovery, validation and payment through AI-driven workflows.", img: "/gemini-2.png" },
+              { title: "Subscription Management", body: "Roving helps agents manage recurring SaaS, API and infrastructure payments without manual operations.", img: "/gemini-3.png" },
+              { title: "Travel & Booking",        body: "Roving helps travel agents securely book flights, hotels and transport within spending policies.", img: "/gemini-4.png" },
+              { title: "Procurement Operations",  body: "Roving helps businesses automate purchasing workflows while keeping humans in control of approvals and limits.", img: "/gemini-5.png" },
+            ].map((uc) => (
+              <div key={uc.title} className="rounded-3xl overflow-hidden flex flex-col" style={{ backgroundColor: "#F8F3F0" }}>
+                <div className="flex items-center justify-center p-6 pt-8 h-56">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={uc.img} alt="" className="h-full w-auto object-contain drop-shadow-md" />
                 </div>
-                <h3 className="font-bold text-[color:var(--color-on-surface)] text-base">{uc.title}</h3>
-                <p className="text-sm text-[color:var(--color-secondary)] leading-relaxed">{uc.body}</p>
-                <a
-                  href="#waitlist"
-                  className="inline-flex items-center gap-1 text-xs font-semibold text-[color:var(--color-primary)] mt-auto group-hover:gap-2 transition-all"
-                >
-                  Get early access
-                  <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
-                </a>
+                <div className="flex flex-col gap-3 p-6 pt-2">
+                  <h3 className="font-bold text-[color:var(--color-on-surface)] text-lg" style={{ fontFamily: "var(--font-display)" }}>{uc.title}</h3>
+                  <p className="text-sm text-[color:var(--color-secondary)] leading-relaxed">{uc.body}</p>
+                  <a href="#waitlist" className="inline-flex items-center gap-1 text-xs font-semibold text-[color:var(--color-primary)] mt-1 hover:gap-2 transition-all">
+                    Get early access <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+                  </a>
+                </div>
               </div>
             ))}
+
+            {/* Treasury & Budgeting — gemini-6 + gemini-7 together */}
+            <div className="rounded-3xl overflow-hidden flex flex-col" style={{ backgroundColor: "#F8F3F0" }}>
+              <div className="flex items-center justify-center gap-2 p-6 pt-8 h-56">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/gemini-6.png" alt="" className="h-full w-auto object-contain drop-shadow-md" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/gemini-7.png" alt="" className="h-[72%] w-auto object-contain drop-shadow-md" />
+              </div>
+              <div className="flex flex-col gap-3 p-6 pt-2">
+                <h3 className="font-bold text-[color:var(--color-on-surface)] text-lg" style={{ fontFamily: "var(--font-display)" }}>Treasury & Budgeting</h3>
+                <p className="text-sm text-[color:var(--color-secondary)] leading-relaxed">Roving helps companies allocate, monitor and control spending across agents, teams and currencies.</p>
+                <a href="#waitlist" className="inline-flex items-center gap-1 text-xs font-semibold text-[color:var(--color-primary)] mt-1 hover:gap-2 transition-all">
+                  Get early access <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+
+            {/* AI Commerce — gemini-8 */}
+            <div className="rounded-3xl overflow-hidden flex flex-col" style={{ backgroundColor: "#F8F3F0" }}>
+              <div className="flex items-center justify-center p-6 pt-8 h-56">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/gemini-8.png" alt="" className="h-full w-auto object-contain drop-shadow-md" />
+              </div>
+              <div className="flex flex-col gap-3 p-6 pt-2">
+                <h3 className="font-bold text-[color:var(--color-on-surface)] text-lg" style={{ fontFamily: "var(--font-display)" }}>AI Commerce</h3>
+                <p className="text-sm text-[color:var(--color-secondary)] leading-relaxed">Roving helps autonomous systems transact safely across digital services, APIs and marketplaces.</p>
+                <a href="#waitlist" className="inline-flex items-center gap-1 text-xs font-semibold text-[color:var(--color-primary)] mt-1 hover:gap-2 transition-all">
+                  Get early access <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Compliance & Audit — gemini-9 */}
+            <div className="rounded-3xl overflow-hidden flex flex-col" style={{ backgroundColor: "#F8F3F0" }}>
+              <div className="flex items-center justify-center p-6 pt-8 h-56">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/gemini-9.png" alt="" className="h-full w-auto object-contain drop-shadow-md" />
+              </div>
+              <div className="flex flex-col gap-3 p-6 pt-2">
+                <h3 className="font-bold text-[color:var(--color-on-surface)] text-lg" style={{ fontFamily: "var(--font-display)" }}>Compliance & Audit</h3>
+                <p className="text-sm text-[color:var(--color-secondary)] leading-relaxed">Roving helps organizations track every request, approval and transaction with complete execution visibility.</p>
+                <a href="#waitlist" className="inline-flex items-center gap-1 text-xs font-semibold text-[color:var(--color-primary)] mt-1 hover:gap-2 transition-all">
+                  Get early access <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
       {/* ── THESIS ────────────────────────────────────────────────────────── */}
-      <section id="thesis" className="py-24 bg-[color:var(--color-primary)]">
-        <div className="max-w-[900px] mx-auto px-6 flex flex-col gap-10">
-          <span className="text-sm font-semibold text-[color:var(--color-inverse-primary)] uppercase tracking-widest">
-            The Roving Thesis
-          </span>
-          <p className="text-2xl lg:text-3xl font-medium text-white leading-relaxed">
-            We believe AI agents are becoming part of the economy, not just part of the workflow. They will buy, book, subscribe, pay and manage financial activity on behalf of people and businesses. But that future needs a safe financial layer.
-          </p>
-          <p className="text-lg text-white/70 leading-relaxed">
-            Right now there is no infrastructure built for that. Organisations want to give agents financial authority without losing control, and the tools to do that simply do not exist yet.
-            <br /><br />
-            Roving is building the identity, accounts, cards, rules, approvals and audit trails that make autonomous financial activity something organisations can actually trust and govern.
-            <br /><br />
-            We are building the financial operating system for the agentic economy.
-          </p>
-          <a
-            href="#waitlist"
-            className="inline-flex self-start items-center gap-2 text-white font-semibold border border-white/30 px-6 py-3 rounded-full hover:bg-white/10 transition-colors"
-          >
-            Read the Roving Thesis
-            <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-          </a>
+      <section id="thesis" className="py-24" style={{ backgroundColor: "#0d1117" }}>
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+
+            {/* Left: text */}
+            <div className="flex flex-col gap-8">
+              <h2
+                className="text-4xl lg:text-5xl font-bold text-white leading-tight"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                The Roving Thesis
+              </h2>
+              <div className="flex flex-col gap-5 text-base text-white/70 leading-relaxed">
+                <p>
+                  We believe AI agents are becoming part of the economy, not just part of the workflow. They will buy, book, subscribe, pay and manage financial activity on behalf of people and businesses. But that future needs a safe financial layer.
+                </p>
+                <p>
+                  Right now there is no infrastructure built for that. Organisations want to give agents financial authority without losing control, and the tools to do that simply do not exist yet.
+                </p>
+                <p>
+                  Roving is building the identity, accounts, cards, rules, approvals and audit trails that make autonomous financial activity something organisations can actually trust and govern.
+                </p>
+                <p className="text-white font-medium">
+                  We are building the financial operating system for the agentic economy.
+                </p>
+              </div>
+              <a
+                href="#waitlist"
+                className="inline-flex self-start items-center gap-2 text-white font-semibold border border-white/30 px-6 py-3 rounded-xl hover:bg-white/10 transition-colors"
+              >
+                Read the Roving Thesis
+                <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </a>
+            </div>
+
+            {/* Right: girl-bubbles photo */}
+            <div className="rounded-3xl overflow-hidden h-[500px]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/girl-bubbles.jpg"
+                alt=""
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
+          </div>
         </div>
       </section>
 
       {/* ── WHY ROVING ────────────────────────────────────────────────────── */}
-      <section className="py-24">
-        <div className="max-w-[1200px] mx-auto px-6 flex flex-col gap-12">
-          <div className="flex flex-col gap-4">
-            <h2
-              className="text-4xl font-extrabold text-[color:var(--color-on-surface)]"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              Why Choose Roving?
-            </h2>
-            <p className="text-lg text-[color:var(--color-secondary)] max-w-xl">
-              Compare and contrast some of Roving&apos;s benefits with other payment providers. Don&apos;t just take our word for it.
-            </p>
-          </div>
+      <section className="py-12">
+        <div className="px-12">
+          <div className="grid md:grid-cols-[500px_1fr] gap-36 items-stretch">
 
-          <div className="rounded-2xl border border-[color:var(--color-outline-variant)] overflow-hidden">
-            {/* Table header */}
-            <div className="grid grid-cols-2 bg-[color:var(--color-surface-container-low)]">
-              <div className="px-3 sm:px-6 py-4 border-r border-[color:var(--color-outline-variant)]">
-                <span className="text-xs sm:text-sm font-bold text-[color:var(--color-primary)]">Roving advantages</span>
+            {/* Left: heading + image */}
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-4">
+                <h2
+                  className="text-4xl font-bold text-[color:var(--color-on-surface)]"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  Why Choose Roving?
+                </h2>
+                <p className="text-base text-[color:var(--color-secondary)] leading-relaxed">
+                  Compare and contrast some of Roving&apos;s benefits with other payment providers. Don&apos;t just take our word for it.
+                </p>
               </div>
-              <div className="px-3 sm:px-6 py-4">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/computer-guy.jpg"
+                alt=""
+                className="w-full object-cover flex-1"
+                style={{ height: "566px", borderRadius: "10px" }}
+              />
+            </div>
+
+            {/* Right: comparison table */}
+            <div className="rounded-2xl border border-[color:var(--color-outline-variant)] overflow-hidden h-full">
+            {/* Table header */}
+            <div className="grid grid-cols-2 gap-2">
+              <div className="px-3 sm:px-6 py-4" style={{ backgroundColor: "#C9C9F3" }}>
+                <span className="text-xs sm:text-sm font-semibold text-black">Roving advantages</span>
+              </div>
+              <div className="px-3 sm:px-6 py-4 bg-[color:var(--color-surface-container-low)]">
                 <span className="text-xs sm:text-sm font-bold text-[color:var(--color-secondary)]">Others</span>
               </div>
             </div>
@@ -646,25 +705,29 @@ export default function HomePage() {
             {comparisons.map((row, i) => (
               <div
                 key={i}
-                className={`grid grid-cols-2 border-t border-[color:var(--color-outline-variant)] ${i % 2 === 0 ? "bg-white" : "bg-[color:var(--color-surface-container-lowest)]"}`}
+                className="grid grid-cols-2 gap-2"
               >
-                <div className="px-3 sm:px-6 py-4 sm:py-5 border-r border-[color:var(--color-outline-variant)] flex items-start gap-2 sm:gap-3">
+                <div className="px-3 sm:px-6 py-4 sm:py-5 flex items-start gap-2 sm:gap-3" style={{ backgroundColor: "#E4E4F8" }}>
                   <span
                     className="material-symbols-outlined text-[color:var(--color-tertiary-container)] mt-0.5 shrink-0 text-[18px] sm:text-[20px]"
-                    style={{ fontVariationSettings: "'FILL' 1", color: "#007550" }}
+                    style={{ fontVariationSettings: "'FILL' 1", color: "#034DF6" }}
                   >
                     check_circle
                   </span>
                   <span className="text-xs sm:text-sm text-[color:var(--color-on-surface)] font-medium">{row.roving}</span>
                 </div>
-                <div className="px-3 sm:px-6 py-4 sm:py-5 flex items-start gap-2 sm:gap-3">
-                  <span className="material-symbols-outlined text-[color:var(--color-outline)] mt-0.5 shrink-0 text-[18px] sm:text-[20px]">
-                    remove
+                <div className="px-3 sm:px-6 py-4 sm:py-5 flex items-start gap-2 sm:gap-3" style={{ backgroundColor: "#EDE8E5" }}>
+                  <span
+                    className="material-symbols-outlined mt-0.5 shrink-0 text-[18px] sm:text-[20px]"
+                    style={{ fontVariationSettings: "'FILL' 1", color: "#A89E99" }}
+                  >
+                    cancel
                   </span>
                   <span className="text-xs sm:text-sm text-[color:var(--color-secondary)]">{row.others}</span>
                 </div>
               </div>
             ))}
+            </div>
           </div>
         </div>
       </section>
