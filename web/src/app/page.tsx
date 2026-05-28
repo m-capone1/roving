@@ -176,7 +176,7 @@ export default function HomePage() {
             alt="Vercel, Twilio, Stripe, OpenAI, Anthropic and more"
             width={1200}
             height={120}
-            className="w-full object-contain sm:scale-125"
+            className="w-full object-contain lg:scale-125"
           />
         </div>
       </section>
@@ -219,7 +219,7 @@ export default function HomePage() {
               Agent Bank Accounts
             </span>
             <h2
-              className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-[color:var(--color-on-surface)]"
+              className="text-2xl md:text-2xl lg:text-5xl font-extrabold leading-tight text-[color:var(--color-on-surface)]"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Open a global account for your AI agent
@@ -259,11 +259,11 @@ export default function HomePage() {
       </section>
 
       {/* ── GLOBAL PAYMENTS ───────────────────────────────────────────────── */}
-      <section className="py-6 bg-white">
-        <div className="px-2">
+      <section className="py-2 md:py-6 bg-white">
+        <div className="px-2 overflow-hidden">
           <div
-            className="grid gap-4"
-            style={{ gridTemplateColumns: "1fr 2fr 1fr", height: "600px" }}
+            className="grid gap-4 md:h-[600px]"
+            style={{ gridTemplateColumns: "1fr 2fr 1fr" }}
           >
             {/* Left tall card — cell-phone-3 */}
             <div
@@ -362,7 +362,7 @@ export default function HomePage() {
                 Virtual Cards
               </span>
               <h2
-                className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-[color:var(--color-on-surface)]"
+                className="text-2xl md:text-2xl lg:text-5xl font-extrabold leading-tight text-[color:var(--color-on-surface)]"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 Give your agents controlled spending power
@@ -411,7 +411,7 @@ export default function HomePage() {
                 Secure payments
               </span>
               <h2
-                className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-[color:var(--color-on-surface)]"
+                className="text-2xl md:text-2xl lg:text-5xl font-extrabold leading-tight text-[color:var(--color-on-surface)]"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 Let your agents handle payments safely
@@ -449,7 +449,7 @@ export default function HomePage() {
             {/* Left 2fr card */}
             <div className="rounded-3xl overflow-hidden relative" style={{ backgroundColor: "#F8F3F0" }}>
               {/* Copy */}
-              <div className="flex flex-col gap-6 p-10 pt-12 max-w-[55%]">
+              <div className="flex flex-col gap-6 p-8 pt-10 md:p-10 md:pt-12 max-w-full md:max-w-[55%]">
                 <span
                   className="inline-flex self-start items-center px-3 py-1.5 rounded-full text-xs font-semibold"
                   style={{ backgroundColor: "#EDE8E5", color: "#003ec7" }}
@@ -467,15 +467,15 @@ export default function HomePage() {
                 </p>
                 <a
                   href="#waitlist"
-                  className="inline-flex self-start items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all"
+                  className="inline-flex self-start items-center gap-2 text-base md:text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all py-1"
                 >
                   Get early access
-                  <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                  <span className="material-symbols-outlined text-[20px] md:text-[18px]">arrow_forward</span>
                 </a>
               </div>
 
               {/* Floating chip */}
-              <div className="absolute bottom-10 left-10 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-md text-xs font-medium text-[color:var(--color-on-surface)]">
+              <div className="absolute bottom-2 left-4 md:bottom-10 md:left-10 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-md text-xs font-medium text-[color:var(--color-on-surface)]">
                 <span
                   className="material-symbols-outlined text-[16px]"
                   style={{ fontVariationSettings: "'FILL' 1", color: "#003ec7" }}
@@ -490,7 +490,7 @@ export default function HomePage() {
               <img
                 src="/girl-phone.png"
                 alt=""
-                className="absolute bottom-0 right-10 h-[82%] w-auto object-contain object-bottom drop-shadow-lg"
+                className="hidden lg:block absolute bottom-0 right-10 h-[82%] w-auto object-contain object-bottom drop-shadow-lg"
               />
             </div>
 
@@ -514,7 +514,7 @@ export default function HomePage() {
 
           {/* Section header */}
           <h2
-            className="text-5xl lg:text-6xl font-bold leading-tight text-[color:var(--color-on-surface)] text-center"
+            className="text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight text-[color:var(--color-on-surface)] text-center"
             style={{ fontFamily: "var(--font-display)" }}
           >
             Use Cases
@@ -528,7 +528,7 @@ export default function HomePage() {
             {/* Background: clipped within card bounds despite outer overflow-visible */}
             <div className="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/gemini-1.png" alt="" className="absolute right-[-8%] top-0 h-[130%] w-auto object-contain opacity-5" />
+              <img src="/gemini-1.png" alt="" className="hidden md:block absolute right-[-8%] top-0 h-[130%] w-auto object-contain opacity-5" />
             </div>
             <div className="flex flex-col gap-5 p-10 py-12 relative z-10">
               <h3
@@ -590,7 +590,7 @@ export default function HomePage() {
             {/* Travel & Booking — full width, text left / image right */}
             <div className="col-span-2 rounded-3xl overflow-hidden grid md:grid-cols-2 items-center relative" style={{ backgroundColor: "#F2F2F7", minHeight: "280px" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/world-background.png" alt="" className="absolute right-[-8%] top-[-35%] h-[150%] w-auto object-cover opacity-5 pointer-events-none" />
+              <img src="/world-background.png" alt="" className="hidden md:block absolute right-[-8%] top-[-35%] h-[150%] w-auto object-cover opacity-5 pointer-events-none" />
               <div className="flex flex-col gap-3 p-10 relative z-10">
                 <h3 className="text-2xl lg:text-3xl font-extrabold leading-tight text-[color:var(--color-on-surface)]" style={{ fontFamily: "var(--font-display)" }}>Travel & Booking</h3>
                 <p className="text-sm text-[color:var(--color-secondary)] leading-relaxed">Roving helps travel agents securely book flights, hotels and transport within spending policies.</p>
@@ -646,7 +646,7 @@ export default function HomePage() {
             <div className="col-span-2 rounded-3xl grid md:grid-cols-2 items-center relative overflow-hidden" style={{ backgroundColor: "#F2F2F7", minHeight: "280px" }}>
               {/* Background image flush right */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/robot-background.png" alt="" className="absolute right-[-67%] top-[-70%] h-[420%] w-auto object-cover opacity-10 pointer-events-none" />
+              <img src="/robot-background.png" alt="" className="hidden md:block absolute right-[-67%] top-[-70%] h-[420%] w-auto object-cover opacity-10 pointer-events-none" />
               <div className="flex flex-col gap-3 p-10 relative z-10">
                 <h3 className="text-2xl lg:text-3xl font-extrabold leading-tight text-[color:var(--color-on-surface)]" style={{ fontFamily: "var(--font-display)" }}>AI Commerce</h3>
                 <p className="text-sm text-[color:var(--color-secondary)] leading-relaxed">Roving helps autonomous systems transact safely across digital services, APIs and marketplaces.</p>
@@ -663,7 +663,7 @@ export default function HomePage() {
             {/* Compliance & Audit — full width, text left / image right */}
             <div className="col-span-2 rounded-3xl grid md:grid-cols-2 items-center relative overflow-hidden" style={{ backgroundColor: "#F2F2F7", minHeight: "280px" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/world-background.png" alt="" className="absolute right-[-8%] top-[-35%] h-[150%] w-auto object-cover opacity-10 pointer-events-none" />
+              <img src="/world-background.png" alt="" className="hidden md:block absolute right-[-8%] top-[-35%] h-[150%] w-auto object-cover opacity-10 pointer-events-none" />
               <div className="flex flex-col gap-3 p-10 relative z-10">
                 <h3 className="text-2xl lg:text-3xl font-extrabold leading-tight text-[color:var(--color-on-surface)]" style={{ fontFamily: "var(--font-display)" }}>Compliance & Audit</h3>
                 <p className="text-sm text-[color:var(--color-secondary)] leading-relaxed">Roving helps organizations track every request, approval and transaction with complete execution visibility.</p>
@@ -689,7 +689,7 @@ export default function HomePage() {
             {/* Left: text */}
             <div className="flex flex-col gap-8">
               <h2
-                className="text-4xl lg:text-5xl font-bold text-white leading-tight"
+                className="text-2xl sm:text-3xl lg:text-5xl font-bold text-white leading-tight"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 The Roving Thesis
@@ -722,7 +722,7 @@ export default function HomePage() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/girl-bubbles.jpg"
-                alt=""
+                alt="Person smiling while using their phone"
                 className="w-full h-full object-cover object-center"
               />
             </div>
@@ -733,14 +733,14 @@ export default function HomePage() {
 
       {/* ── WHY ROVING ────────────────────────────────────────────────────── */}
       <section className="py-12">
-        <div className="px-12">
-          <div className="grid md:grid-cols-[500px_1fr] gap-36 items-stretch">
+        <div className="px-4 md:px-12">
+          <div className="grid lg:grid-cols-[500px_1fr] gap-8 lg:gap-36 items-stretch">
 
             {/* Left: heading + image */}
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-4">
                 <h2
-                  className="text-4xl font-bold text-[color:var(--color-on-surface)]"
+                  className="text-2xl sm:text-3xl md:text-4xl font-bold text-[color:var(--color-on-surface)]"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   Why Choose Roving?
@@ -752,7 +752,7 @@ export default function HomePage() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/computer-guy.jpg"
-                alt=""
+                alt="Developer working on a laptop"
                 className="w-full object-cover flex-1"
                 style={{ height: "566px", borderRadius: "10px" }}
               />
@@ -802,20 +802,20 @@ export default function HomePage() {
 
       {/* ── KYA ───────────────────────────────────────────────────────────── */}
       <section className="pt-24 pb-56 bg-white">
-        <div className="px-12">
+        <div className="px-4 md:px-12">
           <h2
-            className="text-5xl font-extrabold text-[color:var(--color-on-surface)] mb-8"
+            className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[color:var(--color-on-surface)] mb-8"
             style={{ fontFamily: "var(--font-display)" }}
           >
             KYA — Know Your Agent
           </h2>
 
-          <div className="grid gap-6" style={{ gridTemplateColumns: "1fr 1fr 25%", height: "640px" }}>
+          <div className="grid gap-6 grid-cols-1 md:grid-cols-[1fr_1fr_25%] md:h-[640px]">
 
             {/* Left col: top 33% text / bottom 66% magnifying image */}
             <div className="flex flex-col gap-4 h-full">
               {/* Top ~33%: text */}
-              <div className="flex flex-col gap-4 rounded-3xl p-6" style={{ flex: "0 0 calc(33% - 8px)", backgroundColor: "#F8F3F0" }}>
+              <div className="flex flex-col gap-4 rounded-3xl p-6 md:flex-none" style={{ backgroundColor: "#F8F3F0" }}>
                 <span className="text-sm font-semibold text-[color:var(--color-primary)] uppercase tracking-widest">KYA — Know Your Agent</span>
                 <h2
                   className="text-2xl font-extrabold text-[color:var(--color-on-surface)] leading-tight"
@@ -843,7 +843,7 @@ export default function HomePage() {
             </div>
 
             {/* Middle col: check list */}
-            <div className="rounded-3xl h-full relative overflow-hidden flex flex-col justify-start px-8 pt-8 pb-8" style={{ backgroundColor: "#F8F3F0" }}>
+            <div className="rounded-3xl h-full relative overflow-hidden flex flex-col justify-start px-5 pt-5 pb-5 md:px-8 md:pt-8 md:pb-8" style={{ backgroundColor: "#F8F3F0" }}>
               {/* Blurry coin backgrounds */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/coin.png" alt="" className="absolute pointer-events-none select-none" style={{ width: "200px", bottom: "-8%", right: "-10%", opacity: 0.35, filter: "blur(16px)", transform: "rotate(20deg)" }} />
@@ -855,16 +855,16 @@ export default function HomePage() {
               <img src="/coin.png" alt="" className="absolute pointer-events-none select-none" style={{ width: "130px", bottom: "30%", right: "8%", opacity: 0.18, filter: "blur(15px)", transform: "rotate(-15deg)" }} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/coin.png" alt="" className="absolute pointer-events-none select-none" style={{ width: "100px", top: "20%", left: "20%", opacity: 0.15, filter: "blur(10px)", transform: "rotate(45deg)" }} />
-              <p className="text-xl font-bold text-[color:var(--color-on-surface)] mb-5 relative z-10">What Roving KYA checks</p>
+              <p className="text-sm lg:text-xl font-bold text-[color:var(--color-on-surface)] mb-2 lg:mb-5 relative z-10">What Roving KYA checks</p>
               <div className="flex flex-col relative z-10">
                 {kyaChecks.map((check, i) => (
                   <div
                     key={check.label}
-                    className="py-3 flex flex-col gap-0.5"
+                    className="py-1.5 lg:py-3 flex flex-col gap-0.5"
                     style={{ borderBottom: i < kyaChecks.length - 1 ? "1px solid rgba(0,0,0,0.08)" : "none" }}
                   >
-                    <p className="text-sm font-semibold text-[color:var(--color-on-surface)]">{check.label}</p>
-                    <p className="text-sm text-[color:var(--color-secondary)] leading-relaxed">{check.detail}</p>
+                    <p className="text-xs font-semibold text-[color:var(--color-on-surface)]">{check.label}</p>
+                    <p className="text-xs lg:text-sm text-[color:var(--color-secondary)] leading-relaxed">{check.detail}</p>
                   </div>
                 ))}
               </div>
@@ -880,18 +880,18 @@ export default function HomePage() {
               <img
                 src="/sideways-phone.png"
                 alt="Roving app"
-                className="absolute top-0 left-1/2 -translate-x-1/2 w-[140%] h-auto object-contain drop-shadow-xl z-0"
+                className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-[140%] h-auto object-contain drop-shadow-xl z-0"
               />
 
               {/* Text — bottom left */}
-              <div className="relative z-10 flex flex-col gap-4 mb-20">
-                <p className="text-2xl font-bold text-[color:var(--color-on-surface)]">Why it matters</p>
-                <p className="text-base text-[color:var(--color-secondary)] leading-relaxed">
+              <div className="relative z-10 flex flex-col gap-3 mb-20">
+                <p className="text-base lg:text-2xl font-bold text-[color:var(--color-on-surface)]">Why it matters</p>
+                <p className="text-xs lg:text-base text-[color:var(--color-secondary)] leading-relaxed">
                   Roving KYA is not just identity verification. It is the trust layer that decides whether an agent is ready for financial access.
                 </p>
                 <a
                   href="#waitlist"
-                  className="inline-flex self-start items-center gap-1 text-base font-semibold text-[color:var(--color-primary)] hover:gap-2 transition-all"
+                  className="inline-flex self-start items-center gap-1 text-xs lg:text-base font-semibold text-[color:var(--color-primary)] hover:gap-2 transition-all"
                 >
                   Verify your first agent
                   <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
@@ -909,7 +909,7 @@ export default function HomePage() {
           {/* Centered heading + description */}
           <div className="flex flex-col items-center gap-4 text-center max-w-2xl">
             <h2
-              className="text-5xl font-extrabold text-[color:var(--color-on-surface)] leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[color:var(--color-on-surface)] leading-tight"
               style={{ fontFamily: "var(--font-display)" }}
             >
               API Sandbox
@@ -931,13 +931,13 @@ export default function HomePage() {
 
       {/* ── NUMBERED FEATURES ─────────────────────────────────────────────── */}
       <section className="pb-24 pt-12 bg-white">
-        <div className="px-12">
-          <div className="grid grid-cols-3 gap-x-4 gap-y-16">
+        <div className="px-4 md:px-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-16">
             {apiFeatures.map((feat, i) => (
               <div
                 key={feat.num}
                 className="rounded-2xl relative flex flex-col px-6 pb-6"
-                style={{ backgroundColor: "#161b27", paddingTop: "calc(52% + 16px)", overflow: "visible" }}
+                style={{ backgroundColor: "#161b27", paddingTop: "clamp(160px, 52%, calc(52% + 16px))", overflow: "visible" }}
               >
                 {/* Image — overflows top of card by ~5% */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -948,7 +948,7 @@ export default function HomePage() {
                   style={{ top: 0, left: "50%", transform: "translate(-50%, -20%)" }}
                 />
                 <p className="text-sm text-white/70 mb-3 font-medium">{feat.num} — {feat.title}</p>
-                <p className="text-lg text-white leading-relaxed">{feat.body}</p>
+                <p className="text-sm sm:text-lg text-white leading-relaxed">{feat.body}</p>
               </div>
             ))}
           </div>
@@ -959,7 +959,7 @@ export default function HomePage() {
       <section className="py-24 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 flex flex-col gap-10">
           <h2
-            className="text-3xl sm:text-4xl font-extrabold text-[color:var(--color-on-surface)] leading-tight text-center whitespace-nowrap"
+            className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[color:var(--color-on-surface)] leading-tight text-center"
             style={{ fontFamily: "var(--font-display)" }}
           >
             The #1 neo bank for humans and their AI agents
@@ -1098,7 +1098,7 @@ export default function HomePage() {
         <div className="overflow-hidden flex justify-center">
           <p
             className="text-white font-extrabold leading-[140%] tracking-[0.04em] select-none"
-            style={{ fontFamily: "Sora, sans-serif", fontSize: "270px", fontWeight: 800 }}
+            style={{ fontFamily: "Sora, sans-serif", fontSize: "clamp(80px, 22vw, 270px)", fontWeight: 800 }}
           >
             Roving
           </p>

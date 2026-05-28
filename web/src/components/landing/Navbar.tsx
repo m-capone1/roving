@@ -17,10 +17,11 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       {/* Announcement banner */}
-      <div className="bg-[#001034] text-white text-xs font-medium py-2.5 px-4 text-center">
+      <div className="bg-[#001034] text-white text-[10px] lg:text-xs font-medium py-2.5 px-4 text-center">
         Welcome to the age of agentic banking.{" "}
         <a href="#waitlist" className="underline underline-offset-2 hover:opacity-80 transition-opacity font-semibold">
-          Give your AI agent a verified financial identity before it moves money.
+          <span className="hidden lg:inline">Give your AI agent a verified financial identity before it moves money.</span>
+          <span className="lg:hidden">Get early access →</span>
         </a>
       </div>
 
@@ -34,7 +35,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => (
             <a
               key={link.label}
@@ -63,7 +64,7 @@ export default function Navbar() {
 
           {/* Mobile menu toggle */}
           <button
-            className="md:hidden p-2 rounded-lg hover:bg-[color:var(--color-surface-container)] transition-colors"
+            className="lg:hidden p-2 rounded-lg hover:bg-[color:var(--color-surface-container)] transition-colors"
             onClick={() => setOpen(!open)}
             aria-label="Toggle menu"
           >
@@ -76,7 +77,7 @@ export default function Navbar() {
 
       {/* Mobile nav */}
       {open && (
-        <div className="md:hidden border-t border-[color:var(--color-outline-variant)]/50 bg-white px-6 py-4 flex flex-col gap-1">
+        <div className="lg:hidden border-t border-[color:var(--color-outline-variant)]/50 bg-white px-6 py-4 flex flex-col gap-1">
           {navLinks.map((link) => (
             <a
               key={link.label}

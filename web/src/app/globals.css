@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+button, [role="button"], a {
+  cursor: pointer;
+}
+
 @font-face {
   font-family: "Satoshi";
   src: url("/fonts/Satoshi-Variable.woff2") format("woff2"),
