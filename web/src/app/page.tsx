@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Navbar from "@/components/landing/Navbar";
+import JoinNetworkForm from "@/components/landing/JoinNetworkForm";
 
 // ─── Features ────────────────────────────────────────────────────────────────
 const features = [
@@ -974,26 +975,32 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── WAITLIST CTA ──────────────────────────────────────────────────── */}
-      <section className="py-24 text-center" style={{ backgroundColor: "#020D1C" }}>
-        <div className="max-w-[640px] mx-auto px-6 flex flex-col items-center gap-8">
-          <h2
-            className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white leading-tight"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            Join the cool kids network
-          </h2>
-          <p className="text-lg text-white/70 leading-relaxed">
-            Get a front-row seat to the future of agentic finance. Product drops, early demos, founder notes and community updates before everyone else catches up.
-          </p>
-          <a
-            href="/waitlist"
-            className="inline-flex items-center gap-2 text-white font-semibold px-8 py-4 rounded-full text-base transition-all hover:opacity-90"
-            style={{ backgroundColor: "#014BAA" }}
-          >
-            Get early access
-            <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
-          </a>
+      {/* ── JOIN THE NETWORK ──────────────────────────────────────────────── */}
+      <section id="network" className="py-24" style={{ backgroundColor: "#020D1C" }}>
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+
+            {/* Left: copy */}
+            <div className="flex flex-col gap-8">
+              <h2
+                className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white leading-tight"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                Join the cool kids network
+              </h2>
+              <div className="flex flex-col gap-5 text-lg text-white/70 leading-relaxed">
+                <p>Get a front-row seat to the future of agentic finance.</p>
+                <p>Product drops, early demos, founder notes, community updates and sharp ideas before everyone else catches up.</p>
+                <p>Don&apos;t forget your popcorn 🍿</p>
+              </div>
+            </div>
+
+            {/* Right: form */}
+            <div className="rounded-3xl p-6 sm:p-8" style={{ backgroundColor: "#252E3A99" }}>
+              <JoinNetworkForm />
+            </div>
+
+          </div>
         </div>
       </section>
 

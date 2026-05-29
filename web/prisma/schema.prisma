@@ -39,3 +39,15 @@ model WaitlistEntry {
 
   @@map("waitlist_entries")
 }
+
+model NetworkSignup {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String
+  company   String?
+  role      String?
+  building  String?
+  createdAt DateTime @default(now())
+
+  @@map("network_signups")
+}
