@@ -1,0 +1,41 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model WaitlistEntry {
+  id                  String   @id @default(cuid())
+  email               String   @unique
+  name                String
+  // Legacy fields
+  company             String?
+  role                String?
+  building            String?
+  source              String?
+  // Multi-step form fields
+  userType            String?
+  country             String?
+  companyName         String?
+  companySize         String?
+  reasons             String[] @default([])
+  aiAgentUsage        String?
+  wantedFeatures      String[] @default([])
+  priorities          String[] @default([])
+  businessWorkflows   String[] @default([])
+  businessBlockers    String[] @default([])
+  earlyAccessInterest String?
+  tags                String[] @default([])
+  marketingConsent    Boolean  @default(false)
+  createdAt           DateTime @default(now())
+
+  @@map("waitlist_entries")
+}
