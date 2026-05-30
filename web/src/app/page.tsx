@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Navbar from "@/components/landing/Navbar";
-import WaitlistForm from "@/components/landing/WaitlistForm";
+import JoinNetworkForm from "@/components/landing/JoinNetworkForm";
 
 // ─── Features ────────────────────────────────────────────────────────────────
 const features = [
@@ -143,7 +143,7 @@ export default function HomePage() {
             </p>
 
             <a
-              href="#waitlist"
+              href="/waitlist"
               className="inline-flex self-start items-center gap-2 text-white font-semibold px-8 py-4 rounded-full transition-colors text-base shadow-lg"
               style={{ backgroundColor: "#014BAA" }}
             >
@@ -228,7 +228,7 @@ export default function HomePage() {
               Create dedicated wallets, cards and controls for agents that need to operate across borders, platforms and payments.
             </p>
             <a
-              href="#waitlist"
+              href="/waitlist"
               className="inline-flex self-start items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all"
             >
               Get early access
@@ -311,7 +311,7 @@ export default function HomePage() {
                   Let your agents pay APIs, vendors and services globally while you control limits, rules and permissions.
                 </p>
                 <a
-                  href="#waitlist"
+                  href="/waitlist"
                   className="inline-flex self-start items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all"
                 >
                   Get early access
@@ -371,7 +371,7 @@ export default function HomePage() {
                 Issue virtual cards for every AI agent with limits, approvals and real-time controls built in.
               </p>
               <a
-                href="#waitlist"
+                href="/waitlist"
                 className="inline-flex self-start items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all"
               >
                 Get early access
@@ -420,7 +420,7 @@ export default function HomePage() {
                 Give agents permission to move money for workflows, operations and subscriptions while you stay in control of approvals, limits and audit trails.
               </p>
               <a
-                href="#waitlist"
+                href="/waitlist"
                 className="inline-flex self-start items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all"
               >
                 Get early access
@@ -466,7 +466,7 @@ export default function HomePage() {
                   Let Phoebe execute transactions using your existing rules, approvals and payment rails.
                 </p>
                 <a
-                  href="#waitlist"
+                  href="/waitlist"
                   className="inline-flex self-start items-center gap-2 text-base md:text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all py-1"
                 >
                   Get early access
@@ -540,7 +540,7 @@ export default function HomePage() {
               <p className="text-sm text-[color:var(--color-secondary)] leading-relaxed">
                 Roving helps businesses give AI agents accounts, wallets and cards with built-in controls and approvals.
               </p>
-              <a href="#waitlist" className="inline-flex self-start items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all">
+              <a href="/waitlist" className="inline-flex self-start items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all">
                 Get early access <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
               </a>
             </div>
@@ -564,7 +564,7 @@ export default function HomePage() {
                 <img loading="lazy" src="/gemini-2.png" alt="" className="h-full w-auto object-contain drop-shadow-md" />
               </div>
               <div className="px-6 pb-6">
-                <a href="#waitlist" className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all">
+                <a href="/waitlist" className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all">
                   Get early access <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
                 </a>
               </div>
@@ -581,7 +581,7 @@ export default function HomePage() {
                 <img loading="lazy" src="/gemini-3.png" alt="" className="h-full w-auto object-contain drop-shadow-md scale-125" />
               </div>
               <div className="px-6 pb-6">
-                <a href="#waitlist" className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all">
+                <a href="/waitlist" className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all">
                   Get early access <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
                 </a>
               </div>
@@ -594,7 +594,7 @@ export default function HomePage() {
               <div className="flex flex-col gap-3 p-10 relative z-10">
                 <h3 className="text-2xl lg:text-3xl font-extrabold leading-tight text-[color:var(--color-on-surface)]" style={{ fontFamily: "var(--font-display)" }}>Travel & Booking</h3>
                 <p className="text-sm text-[color:var(--color-secondary)] leading-relaxed">Roving helps travel agents securely book flights, hotels and transport within spending policies.</p>
-                <a href="#waitlist" className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all">
+                <a href="/waitlist" className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all">
                   Get early access <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
                 </a>
               </div>
@@ -615,7 +615,7 @@ export default function HomePage() {
                 <img loading="lazy" src="/gemini-5.png" alt="" className="h-full w-auto object-contain drop-shadow-md" />
               </div>
               <div className="px-6 pb-6">
-                <a href="#waitlist" className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all">
+                <a href="/waitlist" className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all">
                   Get early access <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
                 </a>
               </div>
@@ -636,7 +636,7 @@ export default function HomePage() {
               <img loading="lazy" src="/gemini-6.png" alt="" className="absolute right-2 top-[32%] h-[130%] w-auto object-contain drop-shadow-md" />
               {/* Button */}
               <div className="absolute bottom-5 left-6 z-10">
-                <a href="#waitlist" className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all">
+                <a href="/waitlist" className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all">
                   Get early access <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
                 </a>
               </div>
@@ -650,7 +650,7 @@ export default function HomePage() {
               <div className="flex flex-col gap-3 p-10 relative z-10">
                 <h3 className="text-2xl lg:text-3xl font-extrabold leading-tight text-[color:var(--color-on-surface)]" style={{ fontFamily: "var(--font-display)" }}>AI Commerce</h3>
                 <p className="text-sm text-[color:var(--color-secondary)] leading-relaxed">Roving helps autonomous systems transact safely across digital services, APIs and marketplaces.</p>
-                <a href="#waitlist" className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all">
+                <a href="/waitlist" className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all">
                   Get early access <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
                 </a>
               </div>
@@ -667,7 +667,7 @@ export default function HomePage() {
               <div className="flex flex-col gap-3 p-10 relative z-10">
                 <h3 className="text-2xl lg:text-3xl font-extrabold leading-tight text-[color:var(--color-on-surface)]" style={{ fontFamily: "var(--font-display)" }}>Compliance & Audit</h3>
                 <p className="text-sm text-[color:var(--color-secondary)] leading-relaxed">Roving helps organizations track every request, approval and transaction with complete execution visibility.</p>
-                <a href="#waitlist" className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all">
+                <a href="/waitlist" className="inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--color-primary)] hover:gap-3 transition-all">
                   Get early access <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
                 </a>
               </div>
@@ -709,7 +709,7 @@ export default function HomePage() {
                 </p>
               </div>
               <a
-                href="#waitlist"
+                href="/waitlist"
                 className="inline-flex self-start items-center gap-2 text-white font-semibold border border-white/30 px-6 py-3 rounded-xl hover:bg-white/10 transition-colors"
               >
                 Read the Roving Thesis
@@ -890,7 +890,7 @@ export default function HomePage() {
                   Roving KYA is not just identity verification. It is the trust layer that decides whether an agent is ready for financial access.
                 </p>
                 <a
-                  href="#waitlist"
+                  href="/waitlist"
                   className="inline-flex self-start items-center gap-1 text-xs lg:text-base font-semibold text-[color:var(--color-primary)] hover:gap-2 transition-all"
                 >
                   Verify your first agent
@@ -975,20 +975,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── WAITLIST ──────────────────────────────────────────────────────── */}
-      <section id="waitlist" className="py-24" style={{ backgroundColor: "#020D1C" }}>
+      {/* ── JOIN THE NETWORK ──────────────────────────────────────────────── */}
+      <section id="network" className="py-24" style={{ backgroundColor: "#020D1C" }}>
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
 
             {/* Left: copy */}
-            <div className="flex flex-col gap-10 pr-20">
+            <div className="flex flex-col gap-8">
               <h2
                 className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white leading-tight"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 Join the cool kids network
               </h2>
-              <div className="flex flex-col gap-6 text-lg text-white leading-relaxed">
+              <div className="flex flex-col gap-5 text-lg text-white/70 leading-relaxed">
                 <p>Get a front-row seat to the future of agentic finance.</p>
                 <p>Product drops, early demos, founder notes, community updates and sharp ideas before everyone else catches up.</p>
                 <p>Don&apos;t forget your popcorn 🍿</p>
@@ -997,7 +997,7 @@ export default function HomePage() {
 
             {/* Right: form */}
             <div className="rounded-3xl p-6 sm:p-8" style={{ backgroundColor: "#252E3A99" }}>
-              <WaitlistForm />
+              <JoinNetworkForm />
             </div>
 
           </div>

@@ -19,7 +19,7 @@ export default function Navbar() {
       {/* Announcement banner */}
       <div className="bg-[#001034] text-white text-[10px] lg:text-xs font-medium py-2.5 px-4 text-center">
         Welcome to the age of agentic banking.{" "}
-        <a href="#waitlist" className="underline underline-offset-2 hover:opacity-80 transition-opacity font-semibold">
+        <a href="/waitlist" className="underline underline-offset-2 hover:opacity-80 transition-opacity font-semibold">
           <span className="hidden lg:inline">Give your AI agent a verified financial identity before it moves money.</span>
           <span className="lg:hidden">Get early access →</span>
         </a>
@@ -56,7 +56,7 @@ export default function Navbar() {
             Sign in
           </Link>
           <a
-            href="#waitlist"
+            href="/waitlist"
             className="hidden sm:inline-flex bg-[color:var(--color-primary)] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-[color:var(--color-primary-container)] transition-colors"
           >
             Get early access
@@ -89,7 +89,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="#waitlist"
+            href="/waitlist"
             className="mt-2 w-full text-center bg-[color:var(--color-primary)] text-white text-sm font-semibold px-5 py-3 rounded-full hover:bg-[color:var(--color-primary-container)] transition-colors"
             onClick={() => setOpen(false)}
           >
