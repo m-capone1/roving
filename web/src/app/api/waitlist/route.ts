@@ -61,7 +61,7 @@ export async function POST(req: NextRequest) {
     console.error("Resend error:", err);
     try {
       await resend.emails.send({
-        from: "Roving <hello@roving.com>",
+        from: "Maddy at Roving <maddy@roving.money>",
         to: "maddy@roving.money",
         subject: "⚠️ Waitlist confirmation email failed",
         text: `A waitlist confirmation email failed to send.\n\nRecipient: ${email.trim().toLowerCase()}\nName: ${name.trim()}\n\nError: ${err instanceof Error ? err.message : String(err)}`,
